@@ -1,0 +1,15 @@
+
+
+
+@baseurl = http://localhost:3000
+### Liste des endpoints
+GET {{baseurl}}
+
+### liste des quizzes publiés
+GET http://localhost:3000/api/quizzes
+
+### Get sur un quiz publié sans les bonnes réponses.
+GET http://localhost:3000/api/quizzes/1
+
+### Get sur un quiz publié sans les bonnes réponses.
+GET http://localhost:3000/api/quizzes/2

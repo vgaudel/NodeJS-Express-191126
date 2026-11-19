@@ -1,0 +1,16 @@
+# Dépendances : elles se réinstallent avec `npm install` (grâce à package-lock.json)
+node_modules/
+
+# Secrets et configuration locale : seul .env.example est versionné
+.env
+
+# Fichiers déposés par les utilisateurs : on garde seulement le dossier
+uploads/*
+!uploads/.gitkeep
+
+# Base de données SQLite locale (jour 4)
+data/*.db
+
+# Fichiers temporaires et journaux
+*.log
+*.tmp
