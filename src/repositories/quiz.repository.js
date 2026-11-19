@@ -47,4 +47,29 @@ async function save(quiz) {
   return quiz;
 }
 
-module.exports = { findAll, findById, save };
+// Plus grand identifiant d'une liste (0 si elle est vide).
+const maxId = (items) => items.reduce((max, item) => Math.max(max, item.id), 0);
+
+// Crée un quiz en lui attribuant ses identifiants (quiz, questions, réponses).
+async function create(data) {
+  const quizzes = await readAll();
+  const allQuestions = quizzes.flatMap((q) => q.questions);
+  let questionId = maxId(allQuestions);
+  let answerId = maxId(allQuestions.flatMap((q) => q.answers));
+
+  const quiz = {
+    id: maxId(quizzes) + 1,
+    ...data,
+    questions: data.questions.map((q) => ({
+      id: ++questionId,
+      statement: q.statement,
+      answers: q.answers.map((a) => ({ id: ++answerId, label: a.label, isCorrect: a.isCorrect })),
+    })),
+  };
+
+  quizzes.push(quiz);
+  await writeAll(quizzes); // l'écriture atomique écrite en E01
+  return quiz;
+}
+
+module.exports = { findAll, findById, save, create, maxId };

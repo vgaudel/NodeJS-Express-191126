@@ -1,15 +1,15 @@
+### Requêtes de test d'EduTrack (extension VS Code « REST Client »)
+### Cliquez sur « Send Request » au-dessus de chaque requête.
+@baseUrl = http://localhost:3000
 
+### Liste des quiz publiés
+GET {{baseUrl}}/api/quizzes
 
+### Un quiz publié, sans les bonnes réponses
+GET {{baseUrl}}/api/quizzes/1
 
-@baseurl = http://localhost:3000
-### Liste des endpoints
-GET {{baseurl}}
+### Un brouillon : 404
+GET {{baseUrl}}/api/quizzes/2
 
-### liste des quizzes publiés
-GET http://localhost:3000/api/quizzes
-
-### Get sur un quiz publié sans les bonnes réponses.
-GET http://localhost:3000/api/quizzes/1
-
-### Get sur un quiz publié sans les bonnes réponses.
-GET http://localhost:3000/api/quizzes/2
+### Un quiz qui n'existe pas : 404
+GET {{baseUrl}}/api/quizzes/999
