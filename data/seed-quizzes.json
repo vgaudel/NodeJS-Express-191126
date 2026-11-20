@@ -1,0 +1,4202 @@
+[
+  {
+    "id": 1,
+    "title": "Les fondamentaux de Node.js",
+    "description": "Mis à jour le 18/11/2026 11:04:31",
+    "published": true,
+    "createdAt": "2026-01-05T09:00:00.000Z",
+    "questions": [
+      {
+        "id": 1,
+        "statement": "Quel moteur JavaScript Node.js utilise-t-il ?",
+        "answers": [
+          {
+            "id": 1,
+            "label": "SpiderMonkey",
+            "isCorrect": false
+          },
+          {
+            "id": 2,
+            "label": "V8",
+            "isCorrect": true
+          },
+          {
+            "id": 3,
+            "label": "Chakra",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "label": "JavaScriptCore",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "statement": "Quelle commande crée un fichier package.json ?",
+        "answers": [
+          {
+            "id": 5,
+            "label": "npm start",
+            "isCorrect": false
+          },
+          {
+            "id": 6,
+            "label": "npm init",
+            "isCorrect": true
+          },
+          {
+            "id": 7,
+            "label": "node init",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "statement": "Combien de threads exécutent le code JavaScript applicatif ?",
+        "answers": [
+          {
+            "id": 8,
+            "label": "Un seul",
+            "isCorrect": true
+          },
+          {
+            "id": 9,
+            "label": "Un par requête",
+            "isCorrect": false
+          },
+          {
+            "id": 10,
+            "label": "Un par cœur de processeur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "statement": "Quel module natif permet de lire un fichier ?",
+        "answers": [
+          {
+            "id": 11,
+            "label": "http",
+            "isCorrect": false
+          },
+          {
+            "id": 12,
+            "label": "fs",
+            "isCorrect": true
+          },
+          {
+            "id": 13,
+            "label": "path",
+            "isCorrect": false
+          },
+          {
+            "id": 14,
+            "label": "events",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "statement": "Que retourne toujours une fonction déclarée avec async ?",
+        "answers": [
+          {
+            "id": 15,
+            "label": "undefined",
+            "isCorrect": false
+          },
+          {
+            "id": 16,
+            "label": "Une callback",
+            "isCorrect": false
+          },
+          {
+            "id": 17,
+            "label": "Une Promise",
+            "isCorrect": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Express en profondeur",
+    "description": "Quiz en cours de rédaction : il n'est pas encore publié.",
+    "published": false,
+    "createdAt": "2026-01-06T09:00:00.000Z",
+    "questions": [
+      {
+        "id": 6,
+        "statement": "Quelle fonction passe la main au middleware suivant ?",
+        "answers": [
+          {
+            "id": 18,
+            "label": "next()",
+            "isCorrect": true
+          },
+          {
+            "id": 19,
+            "label": "continue()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "statement": "Quelle méthode envoie une réponse JSON ?",
+        "answers": [
+          {
+            "id": 20,
+            "label": "res.json()",
+            "isCorrect": true
+          },
+          {
+            "id": 21,
+            "label": "res.sendJSON()",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Chapitre 1 — Rappels JavaScript et principes du serveur web",
+    "description": "Quiz de révision du chapitre 1 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:01:00.000Z",
+    "questions": [
+      {
+        "id": 8,
+        "statement": "Dans le modèle client-serveur, quel rôle initie l'échange ?",
+        "answers": [
+          {
+            "id": 22,
+            "label": "Le serveur",
+            "isCorrect": false
+          },
+          {
+            "id": 23,
+            "label": "Le client",
+            "isCorrect": true
+          },
+          {
+            "id": 24,
+            "label": "Le protocole HTTP lui-même",
+            "isCorrect": false
+          },
+          {
+            "id": 25,
+            "label": "La base de données",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "statement": "Quelle méthode HTTP est destinée à la création d'une ressource ?",
+        "answers": [
+          {
+            "id": 26,
+            "label": "GET",
+            "isCorrect": false
+          },
+          {
+            "id": 27,
+            "label": "DELETE",
+            "isCorrect": false
+          },
+          {
+            "id": 28,
+            "label": "POST",
+            "isCorrect": true
+          },
+          {
+            "id": 29,
+            "label": "HEAD",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "statement": "Que signifie un code de statut HTTP `404` ?",
+        "answers": [
+          {
+            "id": 30,
+            "label": "Succès de la requête",
+            "isCorrect": false
+          },
+          {
+            "id": 31,
+            "label": "Ressource introuvable",
+            "isCorrect": true
+          },
+          {
+            "id": 32,
+            "label": "Erreur interne du serveur",
+            "isCorrect": false
+          },
+          {
+            "id": 33,
+            "label": "Redirection permanente",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "statement": "Un code de statut `200` garantit-il que l'opération métier demandée a réussi ?",
+        "answers": [
+          {
+            "id": 34,
+            "label": "Oui, toujours",
+            "isCorrect": false
+          },
+          {
+            "id": 35,
+            "label": "Non, il indique seulement le succès technique du transport HTTP",
+            "isCorrect": true
+          },
+          {
+            "id": 36,
+            "label": "Oui, mais uniquement pour les requêtes GET",
+            "isCorrect": false
+          },
+          {
+            "id": 37,
+            "label": "Non, un code 200 signale systématiquement une erreur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "statement": "Quelle est la différence principale entre `let`/`const` et `var` ?",
+        "answers": [
+          {
+            "id": 38,
+            "label": "`let`/`const` sont limités à la portée du bloc, `var` remonte à la fonction englobante",
+            "isCorrect": true
+          },
+          {
+            "id": 39,
+            "label": "`var` est plus récent que `let`/`const`",
+            "isCorrect": false
+          },
+          {
+            "id": 40,
+            "label": "`let`/`const` ne peuvent pas contenir de nombres",
+            "isCorrect": false
+          },
+          {
+            "id": 41,
+            "label": "Il n'y a aucune différence de portée",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "statement": "Pourquoi le fait qu'une fonction JavaScript soit une valeur est-il important pour Node.js ?",
+        "answers": [
+          {
+            "id": 42,
+            "label": "Cela permet de transmettre une fonction pour qu'elle s'exécute plus tard, base de l'asynchrone",
+            "isCorrect": true
+          },
+          {
+            "id": 43,
+            "label": "Cela évite d'écrire des boucles",
+            "isCorrect": false
+          },
+          {
+            "id": 44,
+            "label": "Cela empêche l'utilisation des objets",
+            "isCorrect": false
+          },
+          {
+            "id": 45,
+            "label": "Cela n'a aucun lien avec Node.js",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "statement": "Que fait une fonction fléchée (`=>`) vis-à-vis de `this` ?",
+        "answers": [
+          {
+            "id": 46,
+            "label": "Elle crée toujours un nouveau `this` global",
+            "isCorrect": false
+          },
+          {
+            "id": 47,
+            "label": "Elle hérite du `this` du contexte englobant",
+            "isCorrect": true
+          },
+          {
+            "id": 48,
+            "label": "Elle interdit l'usage de `this`",
+            "isCorrect": false
+          },
+          {
+            "id": 49,
+            "label": "Elle transforme `this` en `undefined` systématiquement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "statement": "Que fournissait l'environnement navigateur que Node.js ne fournit pas ?",
+        "answers": [
+          {
+            "id": 50,
+            "label": "Les objets `window` et `document`",
+            "isCorrect": true
+          },
+          {
+            "id": 51,
+            "label": "Le langage JavaScript",
+            "isCorrect": false
+          },
+          {
+            "id": 52,
+            "label": "Les fonctions et les variables",
+            "isCorrect": false
+          },
+          {
+            "id": 53,
+            "label": "Les opérateurs arithmétiques",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "statement": "Que désigne une version « LTS » de Node.js ?",
+        "answers": [
+          {
+            "id": 54,
+            "label": "Une version expérimentale instable",
+            "isCorrect": false
+          },
+          {
+            "id": 55,
+            "label": "Une version à support et maintenance prolongés, recommandée en production",
+            "isCorrect": true
+          },
+          {
+            "id": 56,
+            "label": "Une version réservée aux tests unitaires",
+            "isCorrect": false
+          },
+          {
+            "id": 57,
+            "label": "Une version qui ne reçoit aucun correctif de sécurité",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "statement": "Quelle commande affiche la version de Node.js installée sur un poste ?",
+        "answers": [
+          {
+            "id": 58,
+            "label": "`node --version`",
+            "isCorrect": true
+          },
+          {
+            "id": 59,
+            "label": "`node --check`",
+            "isCorrect": false
+          },
+          {
+            "id": 60,
+            "label": "`npm --node`",
+            "isCorrect": false
+          },
+          {
+            "id": 61,
+            "label": "`node --list`",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Chapitre 2 — Le moteur V8, l'event loop et le modèle non-bloquant",
+    "description": "Quiz de révision du chapitre 2 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:02:00.000Z",
+    "questions": [
+      {
+        "id": 18,
+        "statement": "Quel est le rôle du moteur V8 dans Node.js ?",
+        "answers": [
+          {
+            "id": 62,
+            "label": "Gérer uniquement les connexions réseau",
+            "isCorrect": false
+          },
+          {
+            "id": 63,
+            "label": "Traduire le code JavaScript en code machine exécutable",
+            "isCorrect": true
+          },
+          {
+            "id": 64,
+            "label": "Stocker les fichiers de configuration",
+            "isCorrect": false
+          },
+          {
+            "id": 65,
+            "label": "Afficher l'interface utilisateur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "statement": "Quelle bibliothèque fournit à Node.js les opérations d'entrée-sortie asynchrones ?",
+        "answers": [
+          {
+            "id": 66,
+            "label": "React",
+            "isCorrect": false
+          },
+          {
+            "id": 67,
+            "label": "libuv",
+            "isCorrect": true
+          },
+          {
+            "id": 68,
+            "label": "Express",
+            "isCorrect": false
+          },
+          {
+            "id": 69,
+            "label": "Babel",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "statement": "Combien de threads exécutent le code JavaScript applicatif dans Node.js ?",
+        "answers": [
+          {
+            "id": 70,
+            "label": "Autant que de cœurs processeur",
+            "isCorrect": false
+          },
+          {
+            "id": 71,
+            "label": "Un seul",
+            "isCorrect": true
+          },
+          {
+            "id": 72,
+            "label": "Deux, un par requête",
+            "isCorrect": false
+          },
+          {
+            "id": 73,
+            "label": "Un thread par module importé",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "statement": "Que se passe-t-il quand une fonction occupe la pile d'appels avec un calcul très long ?",
+        "answers": [
+          {
+            "id": 74,
+            "label": "Les autres requêtes sont traitées normalement en parallèle",
+            "isCorrect": false
+          },
+          {
+            "id": 75,
+            "label": "Node.js bascule automatiquement sur un autre thread",
+            "isCorrect": false
+          },
+          {
+            "id": 76,
+            "label": "Aucune autre instruction JavaScript ne peut s'exécuter pendant ce temps",
+            "isCorrect": true
+          },
+          {
+            "id": 77,
+            "label": "Le serveur redémarre automatiquement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "statement": "Qu'est-ce que la boucle d'événements (event loop) ?",
+        "answers": [
+          {
+            "id": 78,
+            "label": "Un mécanisme qui vérifie si la pile d'appels est vide et y transfère les callbacks prêtes",
+            "isCorrect": true
+          },
+          {
+            "id": 79,
+            "label": "Un outil de test unitaire",
+            "isCorrect": false
+          },
+          {
+            "id": 80,
+            "label": "Un serveur HTTP alternatif",
+            "isCorrect": false
+          },
+          {
+            "id": 81,
+            "label": "Une boucle `for` spécifique à Node.js",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "statement": "Pourquoi une opération d'entrée-sortie est-elle déléguée à libuv plutôt qu'exécutée directement dans la pile d'appels ?",
+        "answers": [
+          {
+            "id": 82,
+            "label": "Pour éviter de bloquer le thread JavaScript pendant sa durée",
+            "isCorrect": true
+          },
+          {
+            "id": 83,
+            "label": "Parce que libuv est plus rapide à écrire",
+            "isCorrect": false
+          },
+          {
+            "id": 84,
+            "label": "Parce que la pile d'appels ne peut contenir que 10 éléments",
+            "isCorrect": false
+          },
+          {
+            "id": 85,
+            "label": "Pour des raisons de licence logicielle",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "statement": "Dans l'exemple avec `setTimeout(() => {...}, 0)`, pourquoi le message du `setTimeout` s'affiche-t-il en dernier ?",
+        "answers": [
+          {
+            "id": 86,
+            "label": "`setTimeout` a une priorité plus basse que `console.log`",
+            "isCorrect": false
+          },
+          {
+            "id": 87,
+            "label": "La callback attend que la pile d'appels soit vidée avant de s'exécuter",
+            "isCorrect": true
+          },
+          {
+            "id": 88,
+            "label": "`0` ms signifie que le code ne s'exécute jamais",
+            "isCorrect": false
+          },
+          {
+            "id": 89,
+            "label": "L'ordre est aléatoire",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "statement": "Node.js est-il un environnement multi-thread pour le code JavaScript applicatif ?",
+        "answers": [
+          {
+            "id": 90,
+            "label": "Oui, chaque requête a son propre thread JavaScript",
+            "isCorrect": false
+          },
+          {
+            "id": 91,
+            "label": "Non, le code JavaScript s'exécute sur un thread unique",
+            "isCorrect": true
+          },
+          {
+            "id": 92,
+            "label": "Oui, mais uniquement sur les serveurs Linux",
+            "isCorrect": false
+          },
+          {
+            "id": 93,
+            "label": "Cela dépend de la version de V8",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "statement": "Quel terme désigne le fait qu'un thread ne reste jamais en attente passive d'une opération d'E/S ?",
+        "answers": [
+          {
+            "id": 94,
+            "label": "Modèle bloquant",
+            "isCorrect": false
+          },
+          {
+            "id": 95,
+            "label": "Modèle non-bloquant",
+            "isCorrect": true
+          },
+          {
+            "id": 96,
+            "label": "Modèle synchrone strict",
+            "isCorrect": false
+          },
+          {
+            "id": 97,
+            "label": "Modèle transactionnel",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "statement": "Quel composant transfère une callback de la file d'attente vers la pile d'appels ?",
+        "answers": [
+          {
+            "id": 98,
+            "label": "Le moteur V8 directement",
+            "isCorrect": false
+          },
+          {
+            "id": 99,
+            "label": "La boucle d'événements (event loop)",
+            "isCorrect": true
+          },
+          {
+            "id": 100,
+            "label": "Le gestionnaire de paquets npm",
+            "isCorrect": false
+          },
+          {
+            "id": 101,
+            "label": "Le module Express",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Chapitre 3 — Node.js et la compatibilité ECMAScript",
+    "description": "Quiz de révision du chapitre 3 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:03:00.000Z",
+    "questions": [
+      {
+        "id": 28,
+        "statement": "Qu'est-ce qu'ECMAScript ?",
+        "answers": [
+          {
+            "id": 102,
+            "label": "Un moteur JavaScript concurrent de V8",
+            "isCorrect": false
+          },
+          {
+            "id": 103,
+            "label": "La norme officielle qui définit la syntaxe et le comportement du langage JavaScript",
+            "isCorrect": true
+          },
+          {
+            "id": 104,
+            "label": "Un gestionnaire de paquets Node.js",
+            "isCorrect": false
+          },
+          {
+            "id": 105,
+            "label": "Un framework serveur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "statement": "Quel comité rédige la norme ECMAScript ?",
+        "answers": [
+          {
+            "id": 106,
+            "label": "TC39",
+            "isCorrect": true
+          },
+          {
+            "id": 107,
+            "label": "W3C",
+            "isCorrect": false
+          },
+          {
+            "id": 108,
+            "label": "IETF",
+            "isCorrect": false
+          },
+          {
+            "id": 109,
+            "label": "ISO",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "statement": "Quel composant de Node.js implémente concrètement la norme ECMAScript ?",
+        "answers": [
+          {
+            "id": 110,
+            "label": "npm",
+            "isCorrect": false
+          },
+          {
+            "id": 111,
+            "label": "Le moteur V8",
+            "isCorrect": true
+          },
+          {
+            "id": 112,
+            "label": "Express",
+            "isCorrect": false
+          },
+          {
+            "id": 113,
+            "label": "libuv",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "statement": "Pourquoi une fonctionnalité récente du langage peut-elle échouer sur une vieille version de Node.js ?",
+        "answers": [
+          {
+            "id": 114,
+            "label": "Node.js interdit volontairement les nouveautés",
+            "isCorrect": false
+          },
+          {
+            "id": 115,
+            "label": "La version de V8 embarquée est trop ancienne pour implémenter cette fonctionnalité",
+            "isCorrect": true
+          },
+          {
+            "id": 116,
+            "label": "ECMAScript n'évolue jamais",
+            "isCorrect": false
+          },
+          {
+            "id": 117,
+            "label": "npm bloque les nouvelles fonctionnalités",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "statement": "Que fait le mode strict vis-à-vis d'une variable non déclarée ?",
+        "answers": [
+          {
+            "id": 118,
+            "label": "Il l'ignore silencieusement",
+            "isCorrect": false
+          },
+          {
+            "id": 119,
+            "label": "Il la transforme automatiquement en constante",
+            "isCorrect": false
+          },
+          {
+            "id": 120,
+            "label": "Il lève une erreur explicite (`ReferenceError`)",
+            "isCorrect": true
+          },
+          {
+            "id": 121,
+            "label": "Il la déclare automatiquement comme variable globale sans erreur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "statement": "Où la directive `\"use strict\";` doit-elle être placée pour être effective ?",
+        "answers": [
+          {
+            "id": 122,
+            "label": "N'importe où dans le fichier",
+            "isCorrect": false
+          },
+          {
+            "id": 123,
+            "label": "À la toute première ligne du fichier ou de la fonction",
+            "isCorrect": true
+          },
+          {
+            "id": 124,
+            "label": "Uniquement dans un commentaire",
+            "isCorrect": false
+          },
+          {
+            "id": 125,
+            "label": "À la dernière ligne du fichier",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "statement": "Un fichier `.mjs` (module ECMAScript) est-il en mode strict par défaut ?",
+        "answers": [
+          {
+            "id": 126,
+            "label": "Non, jamais",
+            "isCorrect": false
+          },
+          {
+            "id": 127,
+            "label": "Oui, automatiquement, sans directive à écrire",
+            "isCorrect": true
+          },
+          {
+            "id": 128,
+            "label": "Seulement si `\"use strict\";` est ajouté manuellement",
+            "isCorrect": false
+          },
+          {
+            "id": 129,
+            "label": "Seulement en environnement de production",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "statement": "Quelle commande permet de vérifier la version de Node.js installée sur un environnement ?",
+        "answers": [
+          {
+            "id": 130,
+            "label": "`npm --node-version`",
+            "isCorrect": false
+          },
+          {
+            "id": 131,
+            "label": "`node --version`",
+            "isCorrect": true
+          },
+          {
+            "id": 132,
+            "label": "`node --check-ecmascript`",
+            "isCorrect": false
+          },
+          {
+            "id": 133,
+            "label": "`npm ecmascript`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "statement": "À quoi sert le champ `engines` dans `package.json` ?",
+        "answers": [
+          {
+            "id": 134,
+            "label": "À lister les dépendances du projet",
+            "isCorrect": false
+          },
+          {
+            "id": 135,
+            "label": "À documenter la version minimale de Node.js attendue par le projet",
+            "isCorrect": true
+          },
+          {
+            "id": 136,
+            "label": "À définir les moteurs de recherche autorisés",
+            "isCorrect": false
+          },
+          {
+            "id": 137,
+            "label": "À configurer le moteur V8 directement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "statement": "Quel est le principal risque évoqué en cas d'écart de version de Node.js entre développement et production ?",
+        "answers": [
+          {
+            "id": 138,
+            "label": "Un ralentissement du réseau",
+            "isCorrect": false
+          },
+          {
+            "id": 139,
+            "label": "Une erreur au démarrage ou une fonction native absente sur l'environnement de production",
+            "isCorrect": true
+          },
+          {
+            "id": 140,
+            "label": "Une augmentation automatique du prix de la licence",
+            "isCorrect": false
+          },
+          {
+            "id": 141,
+            "label": "Aucun risque, Node.js s'adapte automatiquement",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Chapitre 4 — npm et le gestionnaire de paquets",
+    "description": "Quiz de révision du chapitre 4 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:04:00.000Z",
+    "questions": [
+      {
+        "id": 38,
+        "statement": "Quelle commande crée un fichier `package.json` en acceptant les valeurs par défaut ?",
+        "answers": [
+          {
+            "id": 142,
+            "label": "`npm start`",
+            "isCorrect": false
+          },
+          {
+            "id": 143,
+            "label": "`npm init -y`",
+            "isCorrect": true
+          },
+          {
+            "id": 144,
+            "label": "`npm build`",
+            "isCorrect": false
+          },
+          {
+            "id": 145,
+            "label": "`npm config`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "statement": "Où sont listées les bibliothèques utilisées en production dans `package.json` ?",
+        "answers": [
+          {
+            "id": 146,
+            "label": "Dans `scripts`",
+            "isCorrect": false
+          },
+          {
+            "id": 147,
+            "label": "Dans `dependencies`",
+            "isCorrect": true
+          },
+          {
+            "id": 148,
+            "label": "Dans `main`",
+            "isCorrect": false
+          },
+          {
+            "id": 149,
+            "label": "Dans `engines`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "statement": "Quelle option installe un paquet uniquement comme dépendance de développement ?",
+        "answers": [
+          {
+            "id": 150,
+            "label": "`--production`",
+            "isCorrect": false
+          },
+          {
+            "id": 151,
+            "label": "`--global`",
+            "isCorrect": false
+          },
+          {
+            "id": 152,
+            "label": "`--save-dev`",
+            "isCorrect": true
+          },
+          {
+            "id": 153,
+            "label": "`--lock`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "statement": "Quel fichier fige les versions exactes réellement installées, y compris des dépendances des dépendances ?",
+        "answers": [
+          {
+            "id": 154,
+            "label": "`package.json`",
+            "isCorrect": false
+          },
+          {
+            "id": 155,
+            "label": "`package-lock.json`",
+            "isCorrect": true
+          },
+          {
+            "id": 156,
+            "label": "`node_modules/index.js`",
+            "isCorrect": false
+          },
+          {
+            "id": 157,
+            "label": "`.npmrc`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "statement": "Le dossier `node_modules/` doit-il être versionné dans Git ?",
+        "answers": [
+          {
+            "id": 158,
+            "label": "Oui, systématiquement",
+            "isCorrect": false
+          },
+          {
+            "id": 159,
+            "label": "Non, il doit être ignoré (`.gitignore`) et se régénère via `npm install`",
+            "isCorrect": true
+          },
+          {
+            "id": 160,
+            "label": "Oui, mais uniquement en production",
+            "isCorrect": false
+          },
+          {
+            "id": 161,
+            "label": "Non, et `package-lock.json` ne doit pas l'être non plus",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "statement": "Dans le semantic versioning `MAJEUR.MINEUR.CORRECTIF`, qu'indique un incrément de `CORRECTIF` ?",
+        "answers": [
+          {
+            "id": 162,
+            "label": "Un changement incompatible avec l'existant",
+            "isCorrect": false
+          },
+          {
+            "id": 163,
+            "label": "Une correction de bogue sans changement de comportement",
+            "isCorrect": true
+          },
+          {
+            "id": 164,
+            "label": "L'ajout d'une fonctionnalité majeure",
+            "isCorrect": false
+          },
+          {
+            "id": 165,
+            "label": "Une suppression complète du paquet",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "statement": "Que permet le champ `scripts` de `package.json` ?",
+        "answers": [
+          {
+            "id": 166,
+            "label": "De déclarer les dépendances de production",
+            "isCorrect": false
+          },
+          {
+            "id": 167,
+            "label": "D'associer un nom court à une commande shell, exécutable via `npm run`",
+            "isCorrect": true
+          },
+          {
+            "id": 168,
+            "label": "De configurer uniquement le port réseau",
+            "isCorrect": false
+          },
+          {
+            "id": 169,
+            "label": "De remplacer `package-lock.json`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "statement": "Quelle commande exécute le script nommé `\"test\"` défini dans `package.json` ?",
+        "answers": [
+          {
+            "id": 170,
+            "label": "`npm test`",
+            "isCorrect": true
+          },
+          {
+            "id": 171,
+            "label": "`npm exec test`",
+            "isCorrect": false
+          },
+          {
+            "id": 172,
+            "label": "`node test`",
+            "isCorrect": false
+          },
+          {
+            "id": 173,
+            "label": "`npm --test`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "statement": "Pourquoi appeler un outil de développement directement (ex. `mocha` en ligne de commande) peut-il échouer ?",
+        "answers": [
+          {
+            "id": 174,
+            "label": "Parce que Node.js interdit les outils tiers",
+            "isCorrect": false
+          },
+          {
+            "id": 175,
+            "label": "Parce que l'exécutable n'est installé que localement dans `node_modules/.bin/`, pas forcément accessible globalement",
+            "isCorrect": true
+          },
+          {
+            "id": 176,
+            "label": "Parce que `package.json` bloque son exécution",
+            "isCorrect": false
+          },
+          {
+            "id": 177,
+            "label": "Parce que les scripts npm sont obligatoires pour tout code Node.js",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "statement": "Que signifie le préfixe `^` devant une version dans `package.json` (ex. `^4.18.2`) ?",
+        "answers": [
+          {
+            "id": 178,
+            "label": "La version doit être strictement égale à `4.18.2`",
+            "isCorrect": false
+          },
+          {
+            "id": 179,
+            "label": "npm peut installer toute version `4.x.x` plus récente, mais jamais `5.0.0`",
+            "isCorrect": true
+          },
+          {
+            "id": 180,
+            "label": "La version est ignorée, npm installe toujours la dernière",
+            "isCorrect": false
+          },
+          {
+            "id": 181,
+            "label": "Le paquet est incompatible avec la version 4",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Chapitre 5 — Variables globales et API documentées de Node.js",
+    "description": "Quiz de révision du chapitre 5 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:05:00.000Z",
+    "questions": [
+      {
+        "id": 48,
+        "statement": "Sur quel flux `console.error` écrit-il, contrairement à `console.log` ?",
+        "answers": [
+          {
+            "id": 182,
+            "label": "Le flux d'erreur standard (`stderr`)",
+            "isCorrect": true
+          },
+          {
+            "id": 183,
+            "label": "Un fichier de log local par défaut",
+            "isCorrect": false
+          },
+          {
+            "id": 184,
+            "label": "Le flux réseau",
+            "isCorrect": false
+          },
+          {
+            "id": 185,
+            "label": "Aucun flux, il est ignoré en production",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "statement": "Quelle méthode `console` affiche un tableau de données sous forme lisible en colonnes ?",
+        "answers": [
+          {
+            "id": 186,
+            "label": "`console.grid`",
+            "isCorrect": false
+          },
+          {
+            "id": 187,
+            "label": "`console.table`",
+            "isCorrect": true
+          },
+          {
+            "id": 188,
+            "label": "`console.list`",
+            "isCorrect": false
+          },
+          {
+            "id": 189,
+            "label": "`console.columns`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "statement": "Que mesurent `console.time` et `console.timeEnd` utilisés avec la même étiquette ?",
+        "answers": [
+          {
+            "id": 190,
+            "label": "La taille mémoire utilisée",
+            "isCorrect": false
+          },
+          {
+            "id": 191,
+            "label": "Le temps écoulé entre les deux appels",
+            "isCorrect": true
+          },
+          {
+            "id": 192,
+            "label": "Le nombre d'appels à une fonction",
+            "isCorrect": false
+          },
+          {
+            "id": 193,
+            "label": "Le nombre de requêtes HTTP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "statement": "Combien de fois `setTimeout` exécute-t-il sa fonction ?",
+        "answers": [
+          {
+            "id": 194,
+            "label": "Indéfiniment, toutes les X millisecondes",
+            "isCorrect": false
+          },
+          {
+            "id": 195,
+            "label": "Une seule fois, après le délai indiqué",
+            "isCorrect": true
+          },
+          {
+            "id": 196,
+            "label": "Deux fois systématiquement",
+            "isCorrect": false
+          },
+          {
+            "id": 197,
+            "label": "Jamais si le délai est à 0",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "statement": "Quelle fonction faut-il appeler pour arrêter un `setInterval` déjà lancé ?",
+        "answers": [
+          {
+            "id": 198,
+            "label": "`stopInterval`",
+            "isCorrect": false
+          },
+          {
+            "id": 199,
+            "label": "`clearInterval`",
+            "isCorrect": true
+          },
+          {
+            "id": 200,
+            "label": "`cancelInterval`",
+            "isCorrect": false
+          },
+          {
+            "id": 201,
+            "label": "`endInterval`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "statement": "Quel risque survient si un `setInterval` n'est jamais nettoyé avec `clearInterval` ?",
+        "answers": [
+          {
+            "id": 202,
+            "label": "Aucun, Node.js l'arrête automatiquement après 10 secondes",
+            "isCorrect": false
+          },
+          {
+            "id": 203,
+            "label": "Le timer continue de s'exécuter indéfiniment, pouvant maintenir le processus actif inutilement",
+            "isCorrect": true
+          },
+          {
+            "id": 204,
+            "label": "Le programme plante immédiatement",
+            "isCorrect": false
+          },
+          {
+            "id": 205,
+            "label": "`setInterval` ne peut jamais être arrêté, avec ou sans `clearInterval`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "statement": "Quel module natif fournit la classe `EventEmitter` ?",
+        "answers": [
+          {
+            "id": 206,
+            "label": "`http`",
+            "isCorrect": false
+          },
+          {
+            "id": 207,
+            "label": "`events`",
+            "isCorrect": true
+          },
+          {
+            "id": 208,
+            "label": "`fs`",
+            "isCorrect": false
+          },
+          {
+            "id": 209,
+            "label": "`path`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "statement": "Quelle méthode d'un `EventEmitter` permet de s'abonner à un événement ?",
+        "answers": [
+          {
+            "id": 210,
+            "label": "`emit()`",
+            "isCorrect": false
+          },
+          {
+            "id": 211,
+            "label": "`on()`",
+            "isCorrect": true
+          },
+          {
+            "id": 212,
+            "label": "`listen()`",
+            "isCorrect": false
+          },
+          {
+            "id": 213,
+            "label": "`subscribe()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "statement": "Que se passe-t-il si `emit()` est appelé avant que les callbacks correspondantes aient été enregistrées avec `on()` ?",
+        "answers": [
+          {
+            "id": 214,
+            "label": "Les callbacks enregistrées ensuite reçoivent quand même l'événement passé",
+            "isCorrect": false
+          },
+          {
+            "id": 215,
+            "label": "Une erreur est levée automatiquement",
+            "isCorrect": false
+          },
+          {
+            "id": 216,
+            "label": "Les callbacks enregistrées après l'`emit` manquent définitivement cette occurrence",
+            "isCorrect": true
+          },
+          {
+            "id": 217,
+            "label": "L'événement est mis en file d'attente indéfiniment",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "statement": "Quel patron de conception `EventEmitter` implémente-t-il ?",
+        "answers": [
+          {
+            "id": 218,
+            "label": "Le patron observateur (publish-subscribe)",
+            "isCorrect": true
+          },
+          {
+            "id": 219,
+            "label": "Le patron singleton",
+            "isCorrect": false
+          },
+          {
+            "id": 220,
+            "label": "Le patron fabrique (factory)",
+            "isCorrect": false
+          },
+          {
+            "id": 221,
+            "label": "Le patron décorateur",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Chapitre 6 — Manipulation de fichiers avec le module fs",
+    "description": "Quiz de révision du chapitre 6 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:06:00.000Z",
+    "questions": [
+      {
+        "id": 58,
+        "statement": "Quel module natif permet de construire des chemins de fichiers indépendamment du système d'exploitation ?",
+        "answers": [
+          {
+            "id": 222,
+            "label": "`fs`",
+            "isCorrect": false
+          },
+          {
+            "id": 223,
+            "label": "`path`",
+            "isCorrect": true
+          },
+          {
+            "id": 224,
+            "label": "`http`",
+            "isCorrect": false
+          },
+          {
+            "id": 225,
+            "label": "`os`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "statement": "Que contient la variable `__dirname` dans un module CommonJS ?",
+        "answers": [
+          {
+            "id": 226,
+            "label": "Le nom du fichier en cours d'exécution",
+            "isCorrect": false
+          },
+          {
+            "id": 227,
+            "label": "Le chemin absolu du dossier contenant le fichier en cours d'exécution",
+            "isCorrect": true
+          },
+          {
+            "id": 228,
+            "label": "La liste des fichiers du dossier courant",
+            "isCorrect": false
+          },
+          {
+            "id": 229,
+            "label": "La version de Node.js installée",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "statement": "Pourquoi éviter de concaténer des chemins avec l'opérateur `+` ?",
+        "answers": [
+          {
+            "id": 230,
+            "label": "Parce que `+` est réservé aux nombres",
+            "isCorrect": false
+          },
+          {
+            "id": 231,
+            "label": "Parce que le séparateur de chemin diffère selon le système d'exploitation",
+            "isCorrect": true
+          },
+          {
+            "id": 232,
+            "label": "Parce que cela ralentit l'exécution",
+            "isCorrect": false
+          },
+          {
+            "id": 233,
+            "label": "Parce que Node.js l'interdit au niveau syntaxique",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "statement": "Quelle est la principale différence entre `fs.readFile` et `fs.readFileSync` ?",
+        "answers": [
+          {
+            "id": 234,
+            "label": "`readFile` lit des fichiers texte, `readFileSync` uniquement des fichiers binaires",
+            "isCorrect": false
+          },
+          {
+            "id": 235,
+            "label": "`readFile` est asynchrone (non-bloquant), `readFileSync` bloque la pile d'appels jusqu'à la fin de la lecture",
+            "isCorrect": true
+          },
+          {
+            "id": 236,
+            "label": "Il n'y a aucune différence de comportement",
+            "isCorrect": false
+          },
+          {
+            "id": 237,
+            "label": "`readFileSync` ne fonctionne que sous Linux",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 62,
+        "statement": "Dans quel contexte les versions `Sync` de `fs` sont-elles le plus risquées ?",
+        "answers": [
+          {
+            "id": 238,
+            "label": "Dans un script exécuté une seule fois au démarrage",
+            "isCorrect": false
+          },
+          {
+            "id": 239,
+            "label": "Dans un serveur HTTP traitant plusieurs requêtes",
+            "isCorrect": true
+          },
+          {
+            "id": 240,
+            "label": "Dans les tests unitaires",
+            "isCorrect": false
+          },
+          {
+            "id": 241,
+            "label": "Elles ne présentent jamais de risque",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "statement": "Que fait l'option `{ recursive: true }` passée à `fs.mkdir` ?",
+        "answers": [
+          {
+            "id": 242,
+            "label": "Elle supprime le dossier s'il existe déjà",
+            "isCorrect": false
+          },
+          {
+            "id": 243,
+            "label": "Elle crée également les dossiers parents manquants",
+            "isCorrect": true
+          },
+          {
+            "id": 244,
+            "label": "Elle chiffre le contenu du dossier",
+            "isCorrect": false
+          },
+          {
+            "id": 245,
+            "label": "Elle limite la profondeur de création à un niveau",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 64,
+        "statement": "Quelle fonction supprime un fichier (et non un dossier) ?",
+        "answers": [
+          {
+            "id": 246,
+            "label": "`fs.rmdir`",
+            "isCorrect": false
+          },
+          {
+            "id": 247,
+            "label": "`fs.unlink`",
+            "isCorrect": true
+          },
+          {
+            "id": 248,
+            "label": "`fs.delete`",
+            "isCorrect": false
+          },
+          {
+            "id": 249,
+            "label": "`fs.remove`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "statement": "Que renvoie `fs.existsSync(chemin)` ?",
+        "answers": [
+          {
+            "id": 250,
+            "label": "Le contenu du fichier",
+            "isCorrect": false
+          },
+          {
+            "id": 251,
+            "label": "`true` ou `false` selon que le chemin existe ou non",
+            "isCorrect": true
+          },
+          {
+            "id": 252,
+            "label": "La date de dernière modification",
+            "isCorrect": false
+          },
+          {
+            "id": 253,
+            "label": "Une erreur si le fichier n'existe pas",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "statement": "Que se passe-t-il si `fs.writeFile` est appelé sur un fichier déjà existant ?",
+        "answers": [
+          {
+            "id": 254,
+            "label": "Une erreur est systématiquement levée",
+            "isCorrect": false
+          },
+          {
+            "id": 255,
+            "label": "Le contenu existant est entièrement écrasé",
+            "isCorrect": true
+          },
+          {
+            "id": 256,
+            "label": "Le nouveau contenu est ajouté à la fin du fichier",
+            "isCorrect": false
+          },
+          {
+            "id": 257,
+            "label": "L'opération est ignorée silencieusement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 67,
+        "statement": "Pourquoi `fs.existsSync` reste-t-il un usage acceptable de la version synchrone même dans du code fréquent ?",
+        "answers": [
+          {
+            "id": 258,
+            "label": "Parce que Node.js interdit sa version asynchrone",
+            "isCorrect": false
+          },
+          {
+            "id": 259,
+            "label": "Parce que l'opération est quasi instantanée, contrairement à une lecture complète de fichier",
+            "isCorrect": true
+          },
+          {
+            "id": 260,
+            "label": "Parce qu'elle ne bloque jamais le thread, même en version Sync",
+            "isCorrect": false
+          },
+          {
+            "id": 261,
+            "label": "Parce qu'elle ne concerne que les tests",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Chapitre 7 — Callbacks et programmation asynchrone",
+    "description": "Quiz de révision du chapitre 7 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:07:00.000Z",
+    "questions": [
+      {
+        "id": 68,
+        "statement": "Qu'est-ce qu'une callback ?",
+        "answers": [
+          {
+            "id": 262,
+            "label": "Une variable globale de Node.js",
+            "isCorrect": false
+          },
+          {
+            "id": 263,
+            "label": "Une fonction transmise en argument pour être exécutée plus tard",
+            "isCorrect": true
+          },
+          {
+            "id": 264,
+            "label": "Un fichier de configuration",
+            "isCorrect": false
+          },
+          {
+            "id": 265,
+            "label": "Une méthode réservée au module fs",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "statement": "Dans la convention error-first, que porte le premier argument d'une callback ?",
+        "answers": [
+          {
+            "id": 266,
+            "label": "Le résultat de l'opération",
+            "isCorrect": false
+          },
+          {
+            "id": 267,
+            "label": "Une éventuelle erreur (ou `null` si tout s'est bien passé)",
+            "isCorrect": true
+          },
+          {
+            "id": 268,
+            "label": "Le nom de la fonction appelante",
+            "isCorrect": false
+          },
+          {
+            "id": 269,
+            "label": "Un identifiant de session",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "statement": "Que faut-il vérifier en priorité à l'intérieur d'une callback error-first ?",
+        "answers": [
+          {
+            "id": 270,
+            "label": "Le second argument uniquement",
+            "isCorrect": false
+          },
+          {
+            "id": 271,
+            "label": "Le premier argument (l'erreur) avant d'utiliser le résultat",
+            "isCorrect": true
+          },
+          {
+            "id": 272,
+            "label": "Rien, l'ordre des arguments n'a pas d'importance",
+            "isCorrect": false
+          },
+          {
+            "id": 273,
+            "label": "La version de Node.js utilisée",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "statement": "Que risque de se produire si l'on utilise le résultat d'une callback sans vérifier l'erreur au préalable ?",
+        "answers": [
+          {
+            "id": 274,
+            "label": "Node.js lève systématiquement une exception claire",
+            "isCorrect": false
+          },
+          {
+            "id": 275,
+            "label": "Le programme manipule silencieusement une valeur `undefined`, produisant un bogue difficile à localiser",
+            "isCorrect": true
+          },
+          {
+            "id": 276,
+            "label": "Le programme s'arrête proprement avec un message d'erreur explicite",
+            "isCorrect": false
+          },
+          {
+            "id": 277,
+            "label": "Aucun risque, la vérification est optionnelle par convention",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "statement": "Comment est surnommé un enchaînement de callbacks fortement imbriquées ?",
+        "answers": [
+          {
+            "id": 278,
+            "label": "Callback hell",
+            "isCorrect": true
+          },
+          {
+            "id": 279,
+            "label": "Event storm",
+            "isCorrect": false
+          },
+          {
+            "id": 280,
+            "label": "Promise chain",
+            "isCorrect": false
+          },
+          {
+            "id": 281,
+            "label": "Async trap",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "statement": "Quel est un inconvénient principal du callback hell ?",
+        "answers": [
+          {
+            "id": 282,
+            "label": "Il empêche totalement l'exécution du code",
+            "isCorrect": false
+          },
+          {
+            "id": 283,
+            "label": "Il rend la lecture du code difficile et duplique la gestion d'erreur à chaque niveau",
+            "isCorrect": true
+          },
+          {
+            "id": 284,
+            "label": "Il supprime automatiquement les erreurs",
+            "isCorrect": false
+          },
+          {
+            "id": 285,
+            "label": "Il ralentit le moteur V8 de façon mesurable",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "statement": "Pourquoi une callback ne bloque-t-elle pas l'exécution du code qui l'a transmise ?",
+        "answers": [
+          {
+            "id": 286,
+            "label": "Parce qu'elle s'exécute plus tard, une fois le résultat asynchrone disponible",
+            "isCorrect": true
+          },
+          {
+            "id": 287,
+            "label": "Parce que Node.js exécute les callbacks avant tout le reste",
+            "isCorrect": false
+          },
+          {
+            "id": 288,
+            "label": "Parce que les callbacks sont exécutées sur un thread séparé du code appelant",
+            "isCorrect": false
+          },
+          {
+            "id": 289,
+            "label": "Parce que `setTimeout` est toujours appelé avec un délai de 0",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "statement": "Dans `diviser(10, 0, callback)` de l'exemple du chapitre, que reçoit la callback ?",
+        "answers": [
+          {
+            "id": 290,
+            "label": "`null` en premier argument et `Infinity` en second",
+            "isCorrect": false
+          },
+          {
+            "id": 291,
+            "label": "Un objet `Error` en premier argument",
+            "isCorrect": true
+          },
+          {
+            "id": 292,
+            "label": "`undefined` dans les deux arguments",
+            "isCorrect": false
+          },
+          {
+            "id": 293,
+            "label": "Le résultat `10` directement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "statement": "Que signifie « suivre la convention Node.js » pour une fonction acceptant une callback ?",
+        "answers": [
+          {
+            "id": 294,
+            "label": "Toujours nommer l'argument `cb`",
+            "isCorrect": false
+          },
+          {
+            "id": 295,
+            "label": "Placer systématiquement l'erreur éventuelle en premier argument de la callback",
+            "isCorrect": true
+          },
+          {
+            "id": 296,
+            "label": "Toujours utiliser `setTimeout` pour simuler l'asynchrone",
+            "isCorrect": false
+          },
+          {
+            "id": 297,
+            "label": "Ne jamais transmettre plus de deux arguments",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "statement": "Quelle alternative aux callbacks imbriquées est annoncée pour le chapitre suivant ?",
+        "answers": [
+          {
+            "id": 298,
+            "label": "Les Promises",
+            "isCorrect": true
+          },
+          {
+            "id": 299,
+            "label": "Les Web Workers",
+            "isCorrect": false
+          },
+          {
+            "id": 300,
+            "label": "Les classes ES6",
+            "isCorrect": false
+          },
+          {
+            "id": 301,
+            "label": "Le module cluster",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Chapitre 8 — Promises et async/await",
+    "description": "Quiz de révision du chapitre 8 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:08:00.000Z",
+    "questions": [
+      {
+        "id": 78,
+        "statement": "Quels sont les trois états possibles d'une Promise ?",
+        "answers": [
+          {
+            "id": 302,
+            "label": "Démarrée, terminée, annulée",
+            "isCorrect": false
+          },
+          {
+            "id": 303,
+            "label": "En attente (pending), tenue (fulfilled), rejetée (rejected)",
+            "isCorrect": true
+          },
+          {
+            "id": 304,
+            "label": "Synchrone, asynchrone, parallèle",
+            "isCorrect": false
+          },
+          {
+            "id": 305,
+            "label": "Ouverte, fermée, en pause",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "statement": "Quelle fonction fait passer une Promise à l'état rejeté ?",
+        "answers": [
+          {
+            "id": 306,
+            "label": "`resolve()`",
+            "isCorrect": false
+          },
+          {
+            "id": 307,
+            "label": "`reject()`",
+            "isCorrect": true
+          },
+          {
+            "id": 308,
+            "label": "`catch()`",
+            "isCorrect": false
+          },
+          {
+            "id": 309,
+            "label": "`throw()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "statement": "Que retourne chaque `.then()` d'une chaîne de Promises ?",
+        "answers": [
+          {
+            "id": 310,
+            "label": "La valeur brute transmise à la callback",
+            "isCorrect": false
+          },
+          {
+            "id": 311,
+            "label": "Une nouvelle Promise, permettant l'enchaînement",
+            "isCorrect": true
+          },
+          {
+            "id": 312,
+            "label": "Toujours `undefined`",
+            "isCorrect": false
+          },
+          {
+            "id": 313,
+            "label": "La Promise d'origine inchangée",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "statement": "Combien de blocs `.catch()` suffisent pour intercepter une erreur survenue à n'importe quelle étape d'une chaîne de Promises ?",
+        "answers": [
+          {
+            "id": 314,
+            "label": "Un par étape",
+            "isCorrect": false
+          },
+          {
+            "id": 315,
+            "label": "Un seul, placé en fin de chaîne",
+            "isCorrect": true
+          },
+          {
+            "id": 316,
+            "label": "Deux, un pour les erreurs réseau et un pour les autres",
+            "isCorrect": false
+          },
+          {
+            "id": 317,
+            "label": "Aucun, les erreurs sont ignorées automatiquement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "statement": "Que fait `.finally()` dans une chaîne de Promises ?",
+        "answers": [
+          {
+            "id": 318,
+            "label": "Il s'exécute uniquement en cas de succès",
+            "isCorrect": false
+          },
+          {
+            "id": 319,
+            "label": "Il s'exécute uniquement en cas d'échec",
+            "isCorrect": false
+          },
+          {
+            "id": 320,
+            "label": "Il s'exécute dans tous les cas, succès ou échec",
+            "isCorrect": true
+          },
+          {
+            "id": 321,
+            "label": "Il annule la Promise précédente",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "statement": "Qu'est-ce qu'une fonction déclarée avec `async` retourne toujours ?",
+        "answers": [
+          {
+            "id": 322,
+            "label": "Une valeur brute",
+            "isCorrect": false
+          },
+          {
+            "id": 323,
+            "label": "Une Promise",
+            "isCorrect": true
+          },
+          {
+            "id": 324,
+            "label": "Un objet callback",
+            "isCorrect": false
+          },
+          {
+            "id": 325,
+            "label": "Un tableau de résultats",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "statement": "Que suspend `await` lorsqu'il est rencontré dans une fonction `async` ?",
+        "answers": [
+          {
+            "id": 326,
+            "label": "Le thread JavaScript global, y compris les autres fonctions en cours",
+            "isCorrect": false
+          },
+          {
+            "id": 327,
+            "label": "Uniquement l'exécution de la fonction `async` courante",
+            "isCorrect": true
+          },
+          {
+            "id": 328,
+            "label": "Toute la boucle d'événements",
+            "isCorrect": false
+          },
+          {
+            "id": 329,
+            "label": "Uniquement l'affichage console",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "statement": "Quelle structure permet de gérer les erreurs dans une fonction `async` utilisant `await` ?",
+        "answers": [
+          {
+            "id": 330,
+            "label": "`if/else`",
+            "isCorrect": false
+          },
+          {
+            "id": 331,
+            "label": "`try/catch`",
+            "isCorrect": true
+          },
+          {
+            "id": 332,
+            "label": "`switch/case`",
+            "isCorrect": false
+          },
+          {
+            "id": 333,
+            "label": "`.then()/.catch()` obligatoirement, `try/catch` étant interdit",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "statement": "Que se passe-t-il si l'on omet le mot-clé `await` devant un appel de fonction retournant une Promise ?",
+        "answers": [
+          {
+            "id": 334,
+            "label": "Une erreur de syntaxe est levée immédiatement",
+            "isCorrect": false
+          },
+          {
+            "id": 335,
+            "label": "La variable reçoit la Promise elle-même, pas la valeur qu'elle contiendra",
+            "isCorrect": true
+          },
+          {
+            "id": 336,
+            "label": "La fonction s'exécute de façon synchrone à la place",
+            "isCorrect": false
+          },
+          {
+            "id": 337,
+            "label": "Node.js ajoute automatiquement le `await` manquant",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "statement": "Quel outil permet de paralléliser deux appels asynchrones indépendants au lieu de les enchaîner avec deux `await` successifs ?",
+        "answers": [
+          {
+            "id": 338,
+            "label": "`Promise.all()`",
+            "isCorrect": true
+          },
+          {
+            "id": 339,
+            "label": "`async.parallel()`",
+            "isCorrect": false
+          },
+          {
+            "id": 340,
+            "label": "`setTimeout(fn, 0)`",
+            "isCorrect": false
+          },
+          {
+            "id": 341,
+            "label": "`console.time()`",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Chapitre 9 — Modules Node.js, CommonJS et ECMAScript Modules",
+    "description": "Quiz de révision du chapitre 9 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:09:00.000Z",
+    "questions": [
+      {
+        "id": 88,
+        "statement": "Quel système de modules est présent depuis la création de Node.js ?",
+        "answers": [
+          {
+            "id": 342,
+            "label": "ECMAScript Modules",
+            "isCorrect": false
+          },
+          {
+            "id": 343,
+            "label": "CommonJS",
+            "isCorrect": true
+          },
+          {
+            "id": 344,
+            "label": "UMD",
+            "isCorrect": false
+          },
+          {
+            "id": 345,
+            "label": "AMD",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "statement": "Quelle instruction charge un module CommonJS depuis un autre fichier ?",
+        "answers": [
+          {
+            "id": 346,
+            "label": "`import`",
+            "isCorrect": false
+          },
+          {
+            "id": 347,
+            "label": "`include`",
+            "isCorrect": false
+          },
+          {
+            "id": 348,
+            "label": "`require`",
+            "isCorrect": true
+          },
+          {
+            "id": 349,
+            "label": "`load`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "statement": "Que se passe-t-il si un même module CommonJS est requis plusieurs fois dans un projet ?",
+        "answers": [
+          {
+            "id": 350,
+            "label": "Il est exécuté à chaque appel de `require`",
+            "isCorrect": false
+          },
+          {
+            "id": 351,
+            "label": "Son contenu est exécuté une seule fois, puis mis en cache pour les appels suivants",
+            "isCorrect": true
+          },
+          {
+            "id": 352,
+            "label": "Node.js refuse le second `require`",
+            "isCorrect": false
+          },
+          {
+            "id": 353,
+            "label": "Chaque appel crée une copie indépendante du module",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "statement": "Quel objet désigne ce qu'un module CommonJS expose aux autres fichiers ?",
+        "answers": [
+          {
+            "id": 354,
+            "label": "`module.exports`",
+            "isCorrect": true
+          },
+          {
+            "id": 355,
+            "label": "`global.public`",
+            "isCorrect": false
+          },
+          {
+            "id": 356,
+            "label": "`window.exports`",
+            "isCorrect": false
+          },
+          {
+            "id": 357,
+            "label": "`this.public`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "statement": "Quelle syntaxe exporte une fonction dans un ECMAScript Module ?",
+        "answers": [
+          {
+            "id": 358,
+            "label": "`module.exports.fonction = ...`",
+            "isCorrect": false
+          },
+          {
+            "id": 359,
+            "label": "`export function fonction() {}`",
+            "isCorrect": true
+          },
+          {
+            "id": 360,
+            "label": "`exports.fonction = ...`",
+            "isCorrect": false
+          },
+          {
+            "id": 361,
+            "label": "`global.fonction = ...`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "statement": "Quelle extension de fichier active directement les ECMAScript Modules, sans modifier `package.json` ?",
+        "answers": [
+          {
+            "id": 362,
+            "label": "`.js`",
+            "isCorrect": false
+          },
+          {
+            "id": 363,
+            "label": "`.cjs`",
+            "isCorrect": false
+          },
+          {
+            "id": 364,
+            "label": "`.mjs`",
+            "isCorrect": true
+          },
+          {
+            "id": 365,
+            "label": "`.esm`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 94,
+        "statement": "Quel champ de `package.json` fait passer tous les fichiers `.js` d'un projet en ECMAScript Modules ?",
+        "answers": [
+          {
+            "id": 366,
+            "label": "`\"main\": \"module\"`",
+            "isCorrect": false
+          },
+          {
+            "id": 367,
+            "label": "`\"type\": \"module\"`",
+            "isCorrect": true
+          },
+          {
+            "id": 368,
+            "label": "`\"esm\": true`",
+            "isCorrect": false
+          },
+          {
+            "id": 369,
+            "label": "`\"format\": \"esm\"`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "statement": "Que se passe-t-il si l'on utilise `import` dans un fichier `.js` d'un projet resté en CommonJS par défaut ?",
+        "answers": [
+          {
+            "id": 370,
+            "label": "Node.js convertit automatiquement la syntaxe",
+            "isCorrect": false
+          },
+          {
+            "id": 371,
+            "label": "Une erreur `SyntaxError: Cannot use import statement outside a module` est levée",
+            "isCorrect": true
+          },
+          {
+            "id": 372,
+            "label": "Le fichier s'exécute normalement sans avertissement",
+            "isCorrect": false
+          },
+          {
+            "id": 373,
+            "label": "Seul un avertissement de dépréciation est affiché",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "statement": "Un même fichier peut-il mélanger `require` et `import` ?",
+        "answers": [
+          {
+            "id": 374,
+            "label": "Oui, sans restriction",
+            "isCorrect": false
+          },
+          {
+            "id": 375,
+            "label": "Non, le choix du système se fait au niveau du fichier ou du projet",
+            "isCorrect": true
+          },
+          {
+            "id": 376,
+            "label": "Oui, mais uniquement en mode strict",
+            "isCorrect": false
+          },
+          {
+            "id": 377,
+            "label": "Non, Node.js interdit tout module dans un même projet",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 97,
+        "statement": "Quelle interopérabilité est la plus simple entre les deux systèmes ?",
+        "answers": [
+          {
+            "id": 378,
+            "label": "Un module CommonJS important facilement un module ESM via `require`",
+            "isCorrect": false
+          },
+          {
+            "id": 379,
+            "label": "Un module ESM important un module CommonJS, plus simple que l'inverse",
+            "isCorrect": true
+          },
+          {
+            "id": 380,
+            "label": "Aucune interopérabilité n'existe entre les deux systèmes",
+            "isCorrect": false
+          },
+          {
+            "id": 381,
+            "label": "Les deux sens sont strictement équivalents en complexité",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Chapitre 10 — Créer un serveur HTTP avec le module http",
+    "description": "Quiz de révision du chapitre 10 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:10:00.000Z",
+    "questions": [
+      {
+        "id": 98,
+        "statement": "Quelle fonction crée un serveur HTTP natif avec Node.js ?",
+        "answers": [
+          {
+            "id": 382,
+            "label": "`http.listen()`",
+            "isCorrect": false
+          },
+          {
+            "id": 383,
+            "label": "`http.createServer()`",
+            "isCorrect": true
+          },
+          {
+            "id": 384,
+            "label": "`http.newServer()`",
+            "isCorrect": false
+          },
+          {
+            "id": 385,
+            "label": "`http.request()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "statement": "Combien d'arguments la fonction de traitement passée à `http.createServer` reçoit-elle ?",
+        "answers": [
+          {
+            "id": 386,
+            "label": "Un seul, la requête",
+            "isCorrect": false
+          },
+          {
+            "id": 387,
+            "label": "Deux : la requête et la réponse",
+            "isCorrect": true
+          },
+          {
+            "id": 388,
+            "label": "Trois : requête, réponse, erreur",
+            "isCorrect": false
+          },
+          {
+            "id": 389,
+            "label": "Aucun",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "statement": "Quelle méthode démarre l'écoute du serveur sur un port donné ?",
+        "answers": [
+          {
+            "id": 390,
+            "label": "`serveur.start()`",
+            "isCorrect": false
+          },
+          {
+            "id": 391,
+            "label": "`serveur.open()`",
+            "isCorrect": false
+          },
+          {
+            "id": 392,
+            "label": "`serveur.listen()`",
+            "isCorrect": true
+          },
+          {
+            "id": 393,
+            "label": "`serveur.bind()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 101,
+        "statement": "Quelle propriété de l'objet `request` contient la méthode HTTP utilisée ?",
+        "answers": [
+          {
+            "id": 394,
+            "label": "`request.type`",
+            "isCorrect": false
+          },
+          {
+            "id": 395,
+            "label": "`request.method`",
+            "isCorrect": true
+          },
+          {
+            "id": 396,
+            "label": "`request.verb`",
+            "isCorrect": false
+          },
+          {
+            "id": 397,
+            "label": "`request.action`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "statement": "Quelle propriété de l'objet `request` contient le chemin demandé par le client ?",
+        "answers": [
+          {
+            "id": 398,
+            "label": "`request.path`",
+            "isCorrect": false
+          },
+          {
+            "id": 399,
+            "label": "`request.route`",
+            "isCorrect": false
+          },
+          {
+            "id": 400,
+            "label": "`request.url`",
+            "isCorrect": true
+          },
+          {
+            "id": 401,
+            "label": "`request.target`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "statement": "Que fait `response.writeHead(200, { \"Content-Type\": \"application/json\" })` ?",
+        "answers": [
+          {
+            "id": 402,
+            "label": "Il fixe le code de statut et les en-têtes de la réponse en une seule fois",
+            "isCorrect": true
+          },
+          {
+            "id": 403,
+            "label": "Il envoie uniquement le corps de la réponse",
+            "isCorrect": false
+          },
+          {
+            "id": 404,
+            "label": "Il ferme la connexion sans envoyer de réponse",
+            "isCorrect": false
+          },
+          {
+            "id": 405,
+            "label": "Il modifie uniquement la méthode HTTP de la requête",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "statement": "Pourquoi l'en-tête `Content-Type` est-il important dans une réponse JSON ?",
+        "answers": [
+          {
+            "id": 406,
+            "label": "Il n'a aucun effet, il est purement indicatif",
+            "isCorrect": false
+          },
+          {
+            "id": 407,
+            "label": "Il conditionne la façon dont le client interprète le corps de la réponse",
+            "isCorrect": true
+          },
+          {
+            "id": 408,
+            "label": "Il remplace le code de statut",
+            "isCorrect": false
+          },
+          {
+            "id": 409,
+            "label": "Il est obligatoire uniquement pour les requêtes POST",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 105,
+        "statement": "Que se passe-t-il si `response.end()` est appelé deux fois dans le traitement d'une même requête ?",
+        "answers": [
+          {
+            "id": 410,
+            "label": "La seconde réponse remplace la première silencieusement",
+            "isCorrect": false
+          },
+          {
+            "id": 411,
+            "label": "Une erreur est provoquée, car une réponse ne peut être terminée qu'une seule fois",
+            "isCorrect": true
+          },
+          {
+            "id": 412,
+            "label": "Node.js fusionne les deux corps de réponse",
+            "isCorrect": false
+          },
+          {
+            "id": 413,
+            "label": "Rien, c'est un comportement normal et recommandé",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 106,
+        "statement": "Pourquoi ajouter `return` après un `response.end()` dans une branche conditionnelle ?",
+        "answers": [
+          {
+            "id": 414,
+            "label": "Pour arrêter le serveur HTTP",
+            "isCorrect": false
+          },
+          {
+            "id": 415,
+            "label": "Pour éviter que l'exécution continue et atteigne un second traitement de réponse",
+            "isCorrect": true
+          },
+          {
+            "id": 416,
+            "label": "Parce que `return` est obligatoire après tout appel de fonction en JavaScript",
+            "isCorrect": false
+          },
+          {
+            "id": 417,
+            "label": "Pour fermer le port d'écoute",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 107,
+        "statement": "Sur quel mécanisme interne `http.createServer` s'appuie-t-il pour déclencher la fonction de traitement à chaque requête ?",
+        "answers": [
+          {
+            "id": 418,
+            "label": "Un `EventEmitter`, via l'événement `\"request\"`",
+            "isCorrect": true
+          },
+          {
+            "id": 419,
+            "label": "Une boucle `setInterval`",
+            "isCorrect": false
+          },
+          {
+            "id": 420,
+            "label": "Un fichier de configuration statique",
+            "isCorrect": false
+          },
+          {
+            "id": 421,
+            "label": "Le module `path`",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Chapitre 11 — Express, bases et routage",
+    "description": "Quiz de révision du chapitre 11 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:11:00.000Z",
+    "questions": [
+      {
+        "id": 108,
+        "statement": "Sur quel module natif de Node.js Express est-il construit ?",
+        "answers": [
+          {
+            "id": 422,
+            "label": "`path`",
+            "isCorrect": false
+          },
+          {
+            "id": 423,
+            "label": "`http`",
+            "isCorrect": true
+          },
+          {
+            "id": 424,
+            "label": "`fs`",
+            "isCorrect": false
+          },
+          {
+            "id": 425,
+            "label": "`events`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 109,
+        "statement": "Quelle méthode remplace `response.end()` en détectant automatiquement le `Content-Type` ?",
+        "answers": [
+          {
+            "id": 426,
+            "label": "`response.send()`",
+            "isCorrect": true
+          },
+          {
+            "id": 427,
+            "label": "`response.write()`",
+            "isCorrect": false
+          },
+          {
+            "id": 428,
+            "label": "`response.close()`",
+            "isCorrect": false
+          },
+          {
+            "id": 429,
+            "label": "`response.finish()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 110,
+        "statement": "Quelle méthode Express définit une route répondant uniquement aux requêtes `POST` ?",
+        "answers": [
+          {
+            "id": 430,
+            "label": "`app.route()`",
+            "isCorrect": false
+          },
+          {
+            "id": 431,
+            "label": "`app.post()`",
+            "isCorrect": true
+          },
+          {
+            "id": 432,
+            "label": "`app.send()`",
+            "isCorrect": false
+          },
+          {
+            "id": 433,
+            "label": "`app.method(\"POST\")`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 111,
+        "statement": "Dans la route `app.get(\"/produits/:id\", ...)`, comment accéder à la valeur du segment `:id` ?",
+        "answers": [
+          {
+            "id": 434,
+            "label": "`request.query.id`",
+            "isCorrect": false
+          },
+          {
+            "id": 435,
+            "label": "`request.params.id`",
+            "isCorrect": true
+          },
+          {
+            "id": 436,
+            "label": "`request.body.id`",
+            "isCorrect": false
+          },
+          {
+            "id": 437,
+            "label": "`request.headers.id`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 112,
+        "statement": "Où se trouvent les paramètres après le `?` d'une URL (ex. `?q=clavier`) ?",
+        "answers": [
+          {
+            "id": 438,
+            "label": "`request.params`",
+            "isCorrect": false
+          },
+          {
+            "id": 439,
+            "label": "`request.query`",
+            "isCorrect": true
+          },
+          {
+            "id": 440,
+            "label": "`request.body`",
+            "isCorrect": false
+          },
+          {
+            "id": 441,
+            "label": "`request.headers`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 113,
+        "statement": "Que faut-il activer pour que `request.body` soit exploitable dans une route `POST` avec un corps JSON ?",
+        "answers": [
+          {
+            "id": 442,
+            "label": "Le middleware `express.json()`",
+            "isCorrect": true
+          },
+          {
+            "id": 443,
+            "label": "`app.listen()`",
+            "isCorrect": false
+          },
+          {
+            "id": 444,
+            "label": "`response.json()`",
+            "isCorrect": false
+          },
+          {
+            "id": 445,
+            "label": "Rien, `request.body` est disponible par défaut",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 114,
+        "statement": "Qu'est-ce qu'un middleware Express ?",
+        "answers": [
+          {
+            "id": 446,
+            "label": "Une base de données intégrée à Express",
+            "isCorrect": false
+          },
+          {
+            "id": 447,
+            "label": "Une fonction interceptant une requête avant qu'elle n'atteigne la route ciblée",
+            "isCorrect": true
+          },
+          {
+            "id": 448,
+            "label": "Un fichier de configuration obligatoire",
+            "isCorrect": false
+          },
+          {
+            "id": 449,
+            "label": "Un remplaçant du module http",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 115,
+        "statement": "Que se passe-t-il si un middleware n'appelle jamais `next()` et ne renvoie pas de réponse ?",
+        "answers": [
+          {
+            "id": 450,
+            "label": "La requête suivante est traitée normalement",
+            "isCorrect": false
+          },
+          {
+            "id": 451,
+            "label": "La requête reste bloquée indéfiniment, sans réponse ni erreur",
+            "isCorrect": true
+          },
+          {
+            "id": 452,
+            "label": "Express relance automatiquement le middleware suivant après 5 secondes",
+            "isCorrect": false
+          },
+          {
+            "id": 453,
+            "label": "Une erreur 500 est renvoyée automatiquement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 116,
+        "statement": "Que fait `app.use()` sans chemin précisé en premier argument ?",
+        "answers": [
+          {
+            "id": 454,
+            "label": "Il enregistre un middleware pour toutes les requêtes entrantes",
+            "isCorrect": true
+          },
+          {
+            "id": 455,
+            "label": "Il enregistre une route accessible uniquement en `GET`",
+            "isCorrect": false
+          },
+          {
+            "id": 456,
+            "label": "Il désactive tous les middlewares précédents",
+            "isCorrect": false
+          },
+          {
+            "id": 457,
+            "label": "Il démarre le serveur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 117,
+        "statement": "Quelle méthode fixe le code de statut d'une réponse avant d'enchaîner l'envoi du corps ?",
+        "answers": [
+          {
+            "id": 458,
+            "label": "`response.code()`",
+            "isCorrect": false
+          },
+          {
+            "id": 459,
+            "label": "`response.status()`",
+            "isCorrect": true
+          },
+          {
+            "id": 460,
+            "label": "`response.set()`",
+            "isCorrect": false
+          },
+          {
+            "id": 461,
+            "label": "`response.header()`",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Chapitre 12 — Express, templates et middlewares tiers",
+    "description": "Quiz de révision du chapitre 12 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:12:00.000Z",
+    "questions": [
+      {
+        "id": 118,
+        "statement": "À quoi sert un moteur de templates comme EJS ?",
+        "answers": [
+          {
+            "id": 462,
+            "label": "À gérer les connexions à la base de données",
+            "isCorrect": false
+          },
+          {
+            "id": 463,
+            "label": "À générer du HTML à partir d'un fichier modèle et de données dynamiques",
+            "isCorrect": true
+          },
+          {
+            "id": 464,
+            "label": "À remplacer complètement Express",
+            "isCorrect": false
+          },
+          {
+            "id": 465,
+            "label": "À journaliser les requêtes HTTP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 119,
+        "statement": "Quelle méthode Express affiche une vue générée par un moteur de templates ?",
+        "answers": [
+          {
+            "id": 466,
+            "label": "`response.render()`",
+            "isCorrect": true
+          },
+          {
+            "id": 467,
+            "label": "`response.send()`",
+            "isCorrect": false
+          },
+          {
+            "id": 468,
+            "label": "`response.view()`",
+            "isCorrect": false
+          },
+          {
+            "id": 469,
+            "label": "`response.template()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 120,
+        "statement": "Que fait la syntaxe `<%= produit.nom %>` dans un fichier EJS ?",
+        "answers": [
+          {
+            "id": 470,
+            "label": "Elle exécute une instruction sans rien afficher",
+            "isCorrect": false
+          },
+          {
+            "id": 471,
+            "label": "Elle insère la valeur JavaScript directement dans le HTML",
+            "isCorrect": true
+          },
+          {
+            "id": 472,
+            "label": "Elle importe un autre fichier de vue",
+            "isCorrect": false
+          },
+          {
+            "id": 473,
+            "label": "Elle définit une nouvelle route",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 121,
+        "statement": "Quel middleware journalise automatiquement chaque requête HTTP (méthode, statut, durée) ?",
+        "answers": [
+          {
+            "id": 474,
+            "label": "Helmet",
+            "isCorrect": false
+          },
+          {
+            "id": 475,
+            "label": "CORS",
+            "isCorrect": false
+          },
+          {
+            "id": 476,
+            "label": "Morgan",
+            "isCorrect": true
+          },
+          {
+            "id": 477,
+            "label": "EJS",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 122,
+        "statement": "Quel format Morgan est adapté à un usage en développement, avec un affichage concis ?",
+        "answers": [
+          {
+            "id": 478,
+            "label": "`\"combined\"`",
+            "isCorrect": false
+          },
+          {
+            "id": 479,
+            "label": "`\"dev\"`",
+            "isCorrect": true
+          },
+          {
+            "id": 480,
+            "label": "`\"common\"`",
+            "isCorrect": false
+          },
+          {
+            "id": 481,
+            "label": "`\"json\"`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 123,
+        "statement": "À quoi sert principalement le middleware Helmet ?",
+        "answers": [
+          {
+            "id": 482,
+            "label": "À générer des vues HTML",
+            "isCorrect": false
+          },
+          {
+            "id": 483,
+            "label": "À appliquer automatiquement des en-têtes HTTP de sécurité recommandés",
+            "isCorrect": true
+          },
+          {
+            "id": 484,
+            "label": "À journaliser les requêtes",
+            "isCorrect": false
+          },
+          {
+            "id": 485,
+            "label": "À gérer les connexions à la base de données",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 124,
+        "statement": "Quel en-tête Helmet retire-t-il par défaut des réponses Express ?",
+        "answers": [
+          {
+            "id": 486,
+            "label": "`Content-Type`",
+            "isCorrect": false
+          },
+          {
+            "id": 487,
+            "label": "`X-Powered-By: Express`",
+            "isCorrect": true
+          },
+          {
+            "id": 488,
+            "label": "`Content-Length`",
+            "isCorrect": false
+          },
+          {
+            "id": 489,
+            "label": "`Set-Cookie`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 125,
+        "statement": "Que signifie CORS (Cross-Origin Resource Sharing) ?",
+        "answers": [
+          {
+            "id": 490,
+            "label": "Un protocole de chiffrement des mots de passe",
+            "isCorrect": false
+          },
+          {
+            "id": 491,
+            "label": "Le mécanisme qui bloque par défaut les requêtes d'un domaine vers un autre domaine",
+            "isCorrect": true
+          },
+          {
+            "id": 492,
+            "label": "Un moteur de templates alternatif à EJS",
+            "isCorrect": false
+          },
+          {
+            "id": 493,
+            "label": "Un outil de test unitaire",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 126,
+        "statement": "Que se passe-t-il sans middleware CORS quand un front-end sur un domaine différent appelle une API Express ?",
+        "answers": [
+          {
+            "id": 494,
+            "label": "La requête aboutit normalement sans restriction",
+            "isCorrect": false
+          },
+          {
+            "id": 495,
+            "label": "Le navigateur bloque la requête par sécurité, malgré un traitement correct côté serveur",
+            "isCorrect": true
+          },
+          {
+            "id": 496,
+            "label": "Le serveur Express refuse de démarrer",
+            "isCorrect": false
+          },
+          {
+            "id": 497,
+            "label": "Express corrige automatiquement le problème sans middleware",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 127,
+        "statement": "Pourquoi éviter `origin: \"*\"` dans la configuration CORS d'une API privée ?",
+        "answers": [
+          {
+            "id": 498,
+            "label": "Parce que cette syntaxe provoque une erreur de démarrage",
+            "isCorrect": false
+          },
+          {
+            "id": 499,
+            "label": "Parce que cela autorise n'importe quel site à consommer l'API, y compris des sites non légitimes",
+            "isCorrect": true
+          },
+          {
+            "id": 500,
+            "label": "Parce que `\"*\"` ralentit les performances du serveur",
+            "isCorrect": false
+          },
+          {
+            "id": 501,
+            "label": "Parce que Morgan ne peut plus journaliser les requêtes ensuite",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Chapitre 13 — Connexion aux bases de données SQL et NoSQL",
+    "description": "Quiz de révision du chapitre 13 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:13:00.000Z",
+    "questions": [
+      {
+        "id": 128,
+        "statement": "Comment une base de données SQL organise-t-elle ses données ?",
+        "answers": [
+          {
+            "id": 502,
+            "label": "En documents JSON libres",
+            "isCorrect": false
+          },
+          {
+            "id": 503,
+            "label": "En tables structurées par un schéma fixe",
+            "isCorrect": true
+          },
+          {
+            "id": 504,
+            "label": "En fichiers texte plats",
+            "isCorrect": false
+          },
+          {
+            "id": 505,
+            "label": "En variables globales",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 129,
+        "statement": "Comment une base NoSQL orientée documents (ex. MongoDB) stocke-t-elle ses données ?",
+        "answers": [
+          {
+            "id": 506,
+            "label": "Dans des tables à colonnes fixes identiques",
+            "isCorrect": false
+          },
+          {
+            "id": 507,
+            "label": "Sous forme de documents proches de JSON, sans schéma imposé",
+            "isCorrect": true
+          },
+          {
+            "id": 508,
+            "label": "Uniquement dans des fichiers CSV",
+            "isCorrect": false
+          },
+          {
+            "id": 509,
+            "label": "Dans des variables d'environnement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 130,
+        "statement": "Qu'est-ce qu'un pilote (driver) de base de données dans Node.js ?",
+        "answers": [
+          {
+            "id": 510,
+            "label": "Un fichier de configuration YAML",
+            "isCorrect": false
+          },
+          {
+            "id": 511,
+            "label": "Un paquet npm gérant le protocole de communication réseau avec le serveur de base de données",
+            "isCorrect": true
+          },
+          {
+            "id": 512,
+            "label": "Un middleware Express obligatoire",
+            "isCorrect": false
+          },
+          {
+            "id": 513,
+            "label": "Un moteur de templates",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 131,
+        "statement": "Pourquoi les opérations `connect()`, `query()` et `end()` sont-elles asynchrones ?",
+        "answers": [
+          {
+            "id": 514,
+            "label": "Parce qu'elles impliquent une requête réseau vers le serveur de base de données",
+            "isCorrect": true
+          },
+          {
+            "id": 515,
+            "label": "Parce que Node.js l'exige pour tout appel de fonction",
+            "isCorrect": false
+          },
+          {
+            "id": 516,
+            "label": "Parce que SQL est un langage asynchrone",
+            "isCorrect": false
+          },
+          {
+            "id": 517,
+            "label": "Elles ne sont pas asynchrones, seulement conventionnellement écrites avec await",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 132,
+        "statement": "Quel risque provoque la concaténation directe d'une valeur utilisateur dans une requête SQL ?",
+        "answers": [
+          {
+            "id": 518,
+            "label": "Une lenteur du serveur",
+            "isCorrect": false
+          },
+          {
+            "id": 519,
+            "label": "L'injection SQL",
+            "isCorrect": true
+          },
+          {
+            "id": 520,
+            "label": "Une erreur de syntaxe systématique",
+            "isCorrect": false
+          },
+          {
+            "id": 521,
+            "label": "Un dépassement de mémoire",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 133,
+        "statement": "Comment la méthode `query(texte, valeurs)` avec des paramètres positionnels (`$1`, `$2`) protège-t-elle contre l'injection SQL ?",
+        "answers": [
+          {
+            "id": 522,
+            "label": "Elle chiffre la base de données",
+            "isCorrect": false
+          },
+          {
+            "id": 523,
+            "label": "Elle échappe automatiquement les valeurs fournies",
+            "isCorrect": true
+          },
+          {
+            "id": 524,
+            "label": "Elle bloque toute requête contenant une valeur utilisateur",
+            "isCorrect": false
+          },
+          {
+            "id": 525,
+            "label": "Elle ne protège pas, c'est un mythe",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 134,
+        "statement": "À quoi servent les variables d'environnement (`process.env`) pour une connexion à une base de données ?",
+        "answers": [
+          {
+            "id": 526,
+            "label": "À accélérer la connexion réseau",
+            "isCorrect": false
+          },
+          {
+            "id": 527,
+            "label": "À séparer les identifiants sensibles du code source versionné",
+            "isCorrect": true
+          },
+          {
+            "id": 528,
+            "label": "À remplacer le pilote de base de données",
+            "isCorrect": false
+          },
+          {
+            "id": 529,
+            "label": "À générer automatiquement le schéma de la base",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 135,
+        "statement": "Quel paquet npm charge automatiquement un fichier `.env` dans `process.env` ?",
+        "answers": [
+          {
+            "id": 530,
+            "label": "`express`",
+            "isCorrect": false
+          },
+          {
+            "id": 531,
+            "label": "`dotenv`",
+            "isCorrect": true
+          },
+          {
+            "id": 532,
+            "label": "`morgan`",
+            "isCorrect": false
+          },
+          {
+            "id": 533,
+            "label": "`pg`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 136,
+        "statement": "Le fichier `.env` doit-il être versionné dans Git ?",
+        "answers": [
+          {
+            "id": 534,
+            "label": "Oui, systématiquement, pour le partager avec l'équipe",
+            "isCorrect": false
+          },
+          {
+            "id": 535,
+            "label": "Non, il doit figurer dans `.gitignore`, comme `node_modules/`",
+            "isCorrect": true
+          },
+          {
+            "id": 536,
+            "label": "Oui, mais uniquement en production",
+            "isCorrect": false
+          },
+          {
+            "id": 537,
+            "label": "Cela n'a aucune importance",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 137,
+        "statement": "Pourquoi un secret exposé dans un ancien commit Git reste-t-il un risque même après suppression du fichier dans un commit ultérieur ?",
+        "answers": [
+          {
+            "id": 538,
+            "label": "Parce que Git conserve l'historique des commits précédents, où le secret reste consultable",
+            "isCorrect": true
+          },
+          {
+            "id": 539,
+            "label": "Parce que la suppression d'un fichier ne fonctionne jamais dans Git",
+            "isCorrect": false
+          },
+          {
+            "id": 540,
+            "label": "Parce que le secret est automatiquement republié sur GitHub",
+            "isCorrect": false
+          },
+          {
+            "id": 541,
+            "label": "Ce n'est pas un risque réel, la suppression est toujours totale et immédiate",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Chapitre 14 — ORM TypeORM, entités et relations",
+    "description": "Quiz de révision du chapitre 14 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:14:00.000Z",
+    "questions": [
+      {
+        "id": 138,
+        "statement": "Que permet un ORM comme TypeORM ?",
+        "answers": [
+          {
+            "id": 542,
+            "label": "De remplacer entièrement le serveur HTTP",
+            "isCorrect": false
+          },
+          {
+            "id": 543,
+            "label": "De manipuler des données relationnelles comme des objets JavaScript, sans écrire le SQL à la main",
+            "isCorrect": true
+          },
+          {
+            "id": 544,
+            "label": "De journaliser automatiquement les requêtes HTTP",
+            "isCorrect": false
+          },
+          {
+            "id": 545,
+            "label": "De sécuriser les en-têtes HTTP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 139,
+        "statement": "À quoi correspond une entité TypeORM ?",
+        "answers": [
+          {
+            "id": 546,
+            "label": "À une ligne précise d'une table",
+            "isCorrect": false
+          },
+          {
+            "id": 547,
+            "label": "À une classe JavaScript représentant une table de la base de données",
+            "isCorrect": true
+          },
+          {
+            "id": 548,
+            "label": "À un middleware Express",
+            "isCorrect": false
+          },
+          {
+            "id": 549,
+            "label": "À un fichier `.env`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 140,
+        "statement": "Quelle méthode d'un repository TypeORM enregistre réellement une instance dans la base ?",
+        "answers": [
+          {
+            "id": 550,
+            "label": "`create()`",
+            "isCorrect": false
+          },
+          {
+            "id": 551,
+            "label": "`save()`",
+            "isCorrect": true
+          },
+          {
+            "id": 552,
+            "label": "`find()`",
+            "isCorrect": false
+          },
+          {
+            "id": 553,
+            "label": "`render()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 141,
+        "statement": "Que fait `repository.create({ nom: \"Clavier\", prix: 79.9 })` ?",
+        "answers": [
+          {
+            "id": 554,
+            "label": "Il enregistre immédiatement l'objet en base de données",
+            "isCorrect": false
+          },
+          {
+            "id": 555,
+            "label": "Il construit une instance en mémoire, sans l'enregistrer en base",
+            "isCorrect": true
+          },
+          {
+            "id": 556,
+            "label": "Il supprime l'entité existante",
+            "isCorrect": false
+          },
+          {
+            "id": 557,
+            "label": "Il génère une requête SQL brute affichée en console",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 142,
+        "statement": "Quel type de relation TypeORM correspond à « une commande contient plusieurs produits, un produit apparaît dans plusieurs commandes » ?",
+        "answers": [
+          {
+            "id": 558,
+            "label": "`one-to-one`",
+            "isCorrect": false
+          },
+          {
+            "id": 559,
+            "label": "`one-to-many`",
+            "isCorrect": false
+          },
+          {
+            "id": 560,
+            "label": "`many-to-many`",
+            "isCorrect": true
+          },
+          {
+            "id": 561,
+            "label": "`many-to-one`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 143,
+        "statement": "Que génère automatiquement TypeORM pour une relation `many-to-many` avec `joinTable: true` ?",
+        "answers": [
+          {
+            "id": 562,
+            "label": "Une vue SQL",
+            "isCorrect": false
+          },
+          {
+            "id": 563,
+            "label": "Une table de jointure intermédiaire",
+            "isCorrect": true
+          },
+          {
+            "id": 564,
+            "label": "Un fichier `.env` supplémentaire",
+            "isCorrect": false
+          },
+          {
+            "id": 565,
+            "label": "Un middleware Express dédié",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 144,
+        "statement": "Que faut-il préciser pour charger les entités liées lors d'une lecture avec TypeORM ?",
+        "answers": [
+          {
+            "id": 566,
+            "label": "Rien, elles sont chargées automatiquement par défaut",
+            "isCorrect": false
+          },
+          {
+            "id": 567,
+            "label": "L'option `relations` dans la requête de recherche",
+            "isCorrect": true
+          },
+          {
+            "id": 568,
+            "label": "Un second appel à `create()`",
+            "isCorrect": false
+          },
+          {
+            "id": 569,
+            "label": "Le mot-clé `await` uniquement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 145,
+        "statement": "Que se passe-t-il si l'on modifie une propriété d'une entité en mémoire (ex. `produit.prix = 89.9`) sans rappeler `save()` ?",
+        "answers": [
+          {
+            "id": 570,
+            "label": "La base de données est automatiquement mise à jour",
+            "isCorrect": false
+          },
+          {
+            "id": 571,
+            "label": "Le changement reste local à l'exécution en cours et n'est jamais répercuté en base",
+            "isCorrect": true
+          },
+          {
+            "id": 572,
+            "label": "Une erreur est levée immédiatement",
+            "isCorrect": false
+          },
+          {
+            "id": 573,
+            "label": "TypeORM annule automatiquement la modification",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "statement": "Quel est un inconvénient possible d'un ORM par rapport à du SQL écrit à la main ?",
+        "answers": [
+          {
+            "id": 574,
+            "label": "Il ne peut jamais créer de nouvelles lignes",
+            "isCorrect": false
+          },
+          {
+            "id": 575,
+            "label": "Il peut générer des requêtes moins optimisées pour des cas complexes de reporting",
+            "isCorrect": true
+          },
+          {
+            "id": 576,
+            "label": "Il empêche toute relation entre entités",
+            "isCorrect": false
+          },
+          {
+            "id": 577,
+            "label": "Il ne fonctionne qu'avec des bases NoSQL",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 147,
+        "statement": "Quels paquets sont nécessaires pour utiliser TypeORM avec PostgreSQL ?",
+        "answers": [
+          {
+            "id": 578,
+            "label": "`express` et `cors`",
+            "isCorrect": false
+          },
+          {
+            "id": 579,
+            "label": "`typeorm`, `reflect-metadata` et `pg`",
+            "isCorrect": true
+          },
+          {
+            "id": 580,
+            "label": "`mocha` et `chai`",
+            "isCorrect": false
+          },
+          {
+            "id": 581,
+            "label": "`dotenv` uniquement",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Chapitre 15 — Tests avec Mocha et Chai",
+    "description": "Quiz de révision du chapitre 15 du cours (10 questions).",
+    "published": true,
+    "createdAt": "2026-01-07T09:15:00.000Z",
+    "questions": [
+      {
+        "id": 148,
+        "statement": "Quel est le rôle de Mocha ?",
+        "answers": [
+          {
+            "id": 582,
+            "label": "Une bibliothèque d'assertions uniquement",
+            "isCorrect": false
+          },
+          {
+            "id": 583,
+            "label": "Un exécuteur de tests qui fournit la structure d'organisation et l'exécution des tests",
+            "isCorrect": true
+          },
+          {
+            "id": 584,
+            "label": "Un ORM pour bases relationnelles",
+            "isCorrect": false
+          },
+          {
+            "id": 585,
+            "label": "Un middleware Express de sécurité",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 149,
+        "statement": "Quelle fonction Mocha regroupe un ensemble de tests liés à une même fonction ?",
+        "answers": [
+          {
+            "id": 586,
+            "label": "`it()`",
+            "isCorrect": false
+          },
+          {
+            "id": 587,
+            "label": "`describe()`",
+            "isCorrect": true
+          },
+          {
+            "id": 588,
+            "label": "`group()`",
+            "isCorrect": false
+          },
+          {
+            "id": 589,
+            "label": "`suite()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 150,
+        "statement": "Quelle fonction Mocha déclare un test individuel ?",
+        "answers": [
+          {
+            "id": 590,
+            "label": "`describe()`",
+            "isCorrect": false
+          },
+          {
+            "id": 591,
+            "label": "`it()`",
+            "isCorrect": true
+          },
+          {
+            "id": 592,
+            "label": "`test()`",
+            "isCorrect": false
+          },
+          {
+            "id": 593,
+            "label": "`check()`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 151,
+        "statement": "Quel rôle joue Chai dans les exemples de ce chapitre ?",
+        "answers": [
+          {
+            "id": 594,
+            "label": "Il remplace Mocha entièrement",
+            "isCorrect": false
+          },
+          {
+            "id": 595,
+            "label": "Il fournit les assertions (`expect`) utilisées à l'intérieur des tests",
+            "isCorrect": true
+          },
+          {
+            "id": 596,
+            "label": "Il gère la connexion à la base de données",
+            "isCorrect": false
+          },
+          {
+            "id": 597,
+            "label": "Il journalise les requêtes HTTP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 152,
+        "statement": "Que fait `expect(resultat).to.equal(30)` ?",
+        "answers": [
+          {
+            "id": 598,
+            "label": "Il affiche `resultat` dans la console",
+            "isCorrect": false
+          },
+          {
+            "id": 599,
+            "label": "Il vérifie que `resultat` est strictement égal à `30`",
+            "isCorrect": true
+          },
+          {
+            "id": 600,
+            "label": "Il modifie `resultat` pour qu'il vaille `30`",
+            "isCorrect": false
+          },
+          {
+            "id": 601,
+            "label": "Il ignore la valeur de `resultat`",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 153,
+        "statement": "Que signale le paramètre `done` injecté dans une fonction de test Mocha ?",
+        "answers": [
+          {
+            "id": 602,
+            "label": "Que le test est ignoré",
+            "isCorrect": false
+          },
+          {
+            "id": 603,
+            "label": "Que le test est terminé, une fois appelé explicitement",
+            "isCorrect": true
+          },
+          {
+            "id": 604,
+            "label": "Que le test a échoué",
+            "isCorrect": false
+          },
+          {
+            "id": 605,
+            "label": "Que Mocha doit répéter le test",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 154,
+        "statement": "Comment Mocha détecte-t-il qu'un test écrit avec `async`/`await` est terminé ?",
+        "answers": [
+          {
+            "id": 606,
+            "label": "Il attend que la fonction de test lève une exception",
+            "isCorrect": false
+          },
+          {
+            "id": 607,
+            "label": "Il attend la résolution (ou le rejet) de la Promise retournée par la fonction de test",
+            "isCorrect": true
+          },
+          {
+            "id": 608,
+            "label": "Il exige quand même l'appel explicite de `done()`",
+            "isCorrect": false
+          },
+          {
+            "id": 609,
+            "label": "Il ne peut pas détecter la fin d'un test asynchrone",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 155,
+        "statement": "Que se passe-t-il si `done` (ou `async`) est omis dans un test portant sur du code asynchrone ?",
+        "answers": [
+          {
+            "id": 610,
+            "label": "Mocha refuse de démarrer la suite de tests",
+            "isCorrect": false
+          },
+          {
+            "id": 611,
+            "label": "Le test est validé immédiatement, avant même l'exécution de la callback testée",
+            "isCorrect": true
+          },
+          {
+            "id": 612,
+            "label": "Le test échoue systématiquement avec un message clair",
+            "isCorrect": false
+          },
+          {
+            "id": 613,
+            "label": "Mocha ajoute automatiquement le `done` manquant",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 156,
+        "statement": "Pourquoi un test asynchrone mal signalé est-il qualifié de « faux positif silencieux » ?",
+        "answers": [
+          {
+            "id": 614,
+            "label": "Parce qu'il échoue toujours, même sur du code correct",
+            "isCorrect": false
+          },
+          {
+            "id": 615,
+            "label": "Parce qu'il réussit systématiquement, y compris quand le code testé est réellement défaillant",
+            "isCorrect": true
+          },
+          {
+            "id": 616,
+            "label": "Parce qu'il ralentit l'exécution de la suite de tests",
+            "isCorrect": false
+          },
+          {
+            "id": 617,
+            "label": "Parce qu'il affiche un message d'erreur incompréhensible",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": 157,
+        "statement": "Que se passe-t-il si une assertion échoue à l'intérieur d'une callback, avant l'appel à `done()` ?",
+        "answers": [
+          {
+            "id": 618,
+            "label": "Mocha rapporte immédiatement un message d'assertion précis",
+            "isCorrect": false
+          },
+          {
+            "id": 619,
+            "label": "Mocha attend le délai d'expiration par défaut avant de signaler un échec de type timeout",
+            "isCorrect": true
+          },
+          {
+            "id": 620,
+            "label": "Le test est automatiquement ignoré",
+            "isCorrect": false
+          },
+          {
+            "id": 621,
+            "label": "Le test réussit malgré l'échec de l'assertion",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+]
