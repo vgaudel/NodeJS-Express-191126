@@ -1,84 +1,54 @@
-// Accès aux quiz stockés dans data/quizzes.json — version PROMISES (A06).
+// Accès aux quiz — version TypeORM (E07).
 //
-// Comparez avec la version callbacks de A04 : mêmes étapes, mais
-//  - on utilise fs/promises, dont les fonctions RETOURNENT une Promise ;
-//  - chaque fonction est « async » : elle retourne elle aussi une Promise ;
-//  - les erreurs se propagent toutes seules (throw / rejet) : plus besoin de
-//    « if (error) return callback(error) » à chaque étape.
-const fs = require('node:fs/promises');
-const path = require('node:path');
+// Même interface que la version JSON (findAll, findById, save, create,
+// remove) : le service des quiz ne change (presque) pas.
+const { AppDataSource } = require('../config/database');
 
-const FILE = path.join(__dirname, '..', '..', 'data', 'quizzes.json');
+const quizzes = () => AppDataSource.getRepository('Quiz');
 
-async function readAll() {
-  // await suspend la fonction jusqu'à la fin de la lecture (sans bloquer Node.js).
-  // Si la lecture échoue, l'erreur est levée ici et remonte à l'appelant.
-  const content = await fs.readFile(FILE, 'utf8');
-  try {
-    return JSON.parse(content);
-  } catch (parseError) {
-    throw new Error(`data/quizzes.json est invalide : ${parseError.message}`);
-  }
-}
-
-async function writeAll(quizzes) {
-  // Écriture atomique : fichier temporaire, puis renommage.
-  const tmp = `${FILE}.tmp`;
-  await fs.writeFile(tmp, JSON.stringify(quizzes, null, 2) + '\n', 'utf8');
-  await fs.rename(tmp, FILE);
-}
+// Options de lecture communes : charger les questions et leurs réponses
+// (relations), dans l'ordre (order). Sans ORDER BY, SQL ne garantit AUCUN ordre.
+const WITH_QUESTIONS = {
+  relations: { questions: { answers: true } },
+  order: { id: 'ASC', questions: { position: 'ASC', answers: { id: 'ASC' } } },
+};
 
 async function findAll() {
-  return readAll();
+  return quizzes().find(WITH_QUESTIONS);
 }
 
 async function findById(id) {
-  const quizzes = await readAll();
-  return quizzes.find((q) => q.id === id) ?? null;
+  // findOne + where : une seule ligne ; null si aucun quiz ne correspond
+  return quizzes().findOne({ where: { id }, ...WITH_QUESTIONS });
 }
 
-// Ajoute le quiz, ou le remplace s'il existe déjà (même id).
+// Enregistre les modifications d'un quiz existant (UPDATE).
 async function save(quiz) {
-  const quizzes = await readAll();
-  const index = quizzes.findIndex((q) => q.id === quiz.id);
-  if (index === -1) quizzes.push(quiz);
-  else quizzes[index] = quiz;
-  await writeAll(quizzes);
-  return quiz;
+  return quizzes().save(quiz);
 }
 
-// Plus grand identifiant d'une liste (0 si elle est vide).
-const maxId = (items) => items.reduce((max, item) => Math.max(max, item.id), 0);
-
-// Crée un quiz en lui attribuant ses identifiants (quiz, questions, réponses).
-async function create(data) {
-  const quizzes = await readAll();
-  const allQuestions = quizzes.flatMap((q) => q.questions);
-  let questionId = maxId(allQuestions);
-  let answerId = maxId(allQuestions.flatMap((q) => q.answers));
-
-  const quiz = {
-    id: maxId(quizzes) + 1,
+// Crée un quiz AVEC ses questions et ses réponses, en une seule opération.
+// Grâce à « cascade: true » (entités Quiz et Question), TypeORM insère le quiz,
+// puis les questions, puis les réponses, dans une TRANSACTION : si une
+// insertion échoue, rien n'est enregistré.
+//
+// manager : par défaut, le gestionnaire global. Le seed passe celui d'une
+// transaction englobante pour importer tous les quiz en « tout ou rien ».
+async function create(data, manager = AppDataSource.manager) {
+  const repository = manager.getRepository('Quiz');
+  const saved = await repository.save({
     ...data,
-    questions: data.questions.map((q) => ({
-      id: ++questionId,
-      statement: q.statement,
-      answers: q.answers.map((a) => ({ id: ++answerId, label: a.label, isCorrect: a.isCorrect })),
-    })),
-  };
-
-  quizzes.push(quiz);
-  await writeAll(quizzes); // l'écriture atomique écrite en E01
-  return quiz;
+    // L'ordre des questions est mémorisé dans la colonne position
+    questions: data.questions.map((question, index) => ({ ...question, position: index + 1 })),
+  });
+  // On relit le quiz pour renvoyer la même forme que findById (id, createdAt…)
+  return repository.findOne({ where: { id: saved.id }, ...WITH_QUESTIONS });
 }
 
-// Supprime un quiz. Renvoie true s'il existait, false sinon.
+// Supprime un quiz ; ses questions et réponses suivent (ON DELETE CASCADE).
 async function remove(id) {
-  const quizzes = await readAll();
-  const remaining = quizzes.filter((q) => q.id !== id);
-  if (remaining.length === quizzes.length) return false;
-  await writeAll(remaining);
-  return true;
+  const result = await quizzes().delete(id);
+  return result.affected > 0; // nombre de lignes supprimées
 }
 
-module.exports = { findAll, findById, save, create, maxId, remove };
+module.exports = { findAll, findById, save, create, remove };

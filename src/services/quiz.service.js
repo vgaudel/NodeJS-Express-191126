@@ -1,9 +1,10 @@
 // Règles métier des quiz (E01 ; création, modification et suppression en E02 ;
-// vue formateur en E04).
+// vue formateur en E04 ; base de données en E07).
 //
 // Le service se place entre le contrôleur (HTTP) et le repository (stockage).
 // Il RÉUTILISE le code de l'atelier A06 :
-//  - quiz.repository.js pour lire et écrire les quiz (fs/promises) ;
+//  - quiz.repository.js pour lire et écrire les quiz (fs/promises, puis
+//    TypeORM en E07 : même interface, donc ce service n'a presque pas changé) ;
 //  - score.service.js pour calculer le score (fonction pure).
 // C'est ici, et seulement ici, que l'on applique les règles des spécifications :
 //  - seuls les quiz PUBLIÉS sont visibles ;
@@ -95,7 +96,7 @@ async function createQuiz(data) {
     title: data.title.trim(),
     description: data.description ?? '',
     published: data.published === true,
-    createdAt: new Date().toISOString(),
+    // E07 : createdAt est rempli par la base (colonne createDate)
     questions: data.questions.map((q) => ({
       statement: q.statement,
       answers: q.answers.map((a) => ({ label: a.label, isCorrect: a.isCorrect })),
@@ -109,7 +110,7 @@ async function updateQuiz(id, changes) {
   if (changes.title !== undefined) quiz.title = changes.title.trim();
   if (changes.description !== undefined) quiz.description = changes.description;
   if (changes.published !== undefined) quiz.published = changes.published;
-  return quizRepository.save(quiz); // save() vient tel quel de A06
+  return quizRepository.save(quiz); // même appel qu'avec le fichier JSON (UPDATE en base)
 }
 
 async function deleteQuiz(id) {
