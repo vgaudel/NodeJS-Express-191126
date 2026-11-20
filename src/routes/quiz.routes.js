@@ -42,7 +42,7 @@ router
 
 // Passer un quiz reste public : aucun compte n'est nécessaire.
 router
-  .route('/:id')
+  .route('/:id/submit')
   .post(requireJson, validate(validateSubmission), controller.submit)
   .all(methodNotAllowed(['POST']));
 

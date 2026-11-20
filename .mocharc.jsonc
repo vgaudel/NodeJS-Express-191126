@@ -1,0 +1,46 @@
+// =============================================================================
+// .mocharc.jsonc — Configuration de Mocha (E08)
+// =============================================================================
+//
+// Quand on lance `npm test`, le script « test » de package.json exécute
+// simplement `mocha`, sans aucune option. Mocha cherche alors un fichier de
+// configuration à la racine du projet et lit ses options dans ce fichier.
+//
+// Noms reconnus : .mocharc.js, .mocharc.cjs, .mocharc.yaml, .mocharc.yml,
+// .mocharc.jsonc et .mocharc.json.
+// On a choisi .jsonc (« JSON with Comments ») : c'est du JSON qui accepte les
+// commentaires. Le JSON standard (.json) n'en accepte aucun.
+//
+// Avantage d'un fichier de configuration : la commande reste courte, et tout
+// le monde (formateur, apprenants, intégration continue) lance les tests de
+// la même façon. Sans ce fichier, il faudrait taper à chaque fois :
+//
+//   mocha "tests/**/*.test.js" --require tests/setup.js --timeout 10000
+//
+// Chaque clé ci-dessous correspond à une option de la ligne de commande
+// (--spec, --require, --timeout). Une option passée en ligne de commande
+// est prioritaire sur ce fichier, par exemple : npx mocha --timeout 2000
+// =============================================================================
+{
+  // spec : QUELS fichiers contiennent des tests.
+  // C'est un motif « glob » :
+  //   **        → n'importe quel sous-dossier, quelle que soit la profondeur
+  //   *.test.js → tout fichier dont le nom se termine par .test.js
+  // Il trouve donc tests/unit/score.test.js, tests/api/auth.api.test.js, etc.
+  // helpers.js et setup.js ne se terminent pas par .test.js : Mocha ne les
+  // prend pas pour des fichiers de test.
+  "spec": "tests/**/*.test.js",
+
+  // require : un fichier chargé AVANT tous les fichiers de test.
+  // setup.js prépare l'environnement (NODE_ENV=test, base SQLite en mémoire,
+  // secret JWT) et exporte des « root hooks » : beforeAll, beforeEach,
+  // afterAll, appliqués à TOUS les tests (voir tests/setup.js).
+  "require": "tests/setup.js",
+
+  // timeout : durée maximale d'un test, en millisecondes (ici 10 s).
+  // Au-delà, Mocha considère le test comme échoué (« Timeout exceeded »).
+  // La valeur par défaut est de 2 s, ce qui est trop court ici : le hook
+  // beforeEach recrée la base avant chaque test, et le premier calcul du
+  // hachage scrypt est volontairement lent. Le délai s'applique aussi aux hooks.
+  "timeout": 10000
+}

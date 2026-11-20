@@ -5,7 +5,7 @@ async function list(req, res) {
 }
 
 async function getOne(req, res) {
-  res.json(await quizService.getQuiz(req.quizId));
+  res.json(await quizService.getQuiz(req.quizId, req.user));
 }
 
 async function create(req, res) {
