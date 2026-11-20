@@ -1,7 +1,7 @@
 const quizService = require('../services/quiz.service')
 
 async function list(req, res) {
-  res.json(await quizService.listQuizzes()); // statut 200 par défaut
+  res.json(await quizService.listQuizzes(req.user)); // statut 200 par défaut
 }
 
 async function getOne(req, res) {

@@ -4198,5 +4198,117 @@
         ]
       }
     ]
+  },
+  {
+    "id": 18,
+    "title": "Express en deux questions",
+    "description": "Créé avec requests.http",
+    "published": false,
+    "createdAt": "2026-11-20T09:12:13.910Z",
+    "questions": [
+      {
+        "id": 158,
+        "statement": "Quel middleware lit un corps JSON ?",
+        "answers": [
+          {
+            "id": 622,
+            "label": "express.static()",
+            "isCorrect": false
+          },
+          {
+            "id": 623,
+            "label": "express.json()",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "id": 159,
+        "statement": "Combien de paramètres a un gestionnaire d'erreurs ?",
+        "answers": [
+          {
+            "id": 624,
+            "label": "3",
+            "isCorrect": false
+          },
+          {
+            "id": 625,
+            "label": "4",
+            "isCorrect": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Express en deux questions",
+    "description": "Créé avec requests.http",
+    "published": false,
+    "createdAt": "2026-11-20T09:34:13.863Z",
+    "questions": [
+      {
+        "id": 160,
+        "statement": "Quel middleware lit un corps JSON ?",
+        "answers": [
+          {
+            "id": 626,
+            "label": "express.static()",
+            "isCorrect": false
+          },
+          {
+            "id": 627,
+            "label": "express.json()",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "id": 161,
+        "statement": "Combien de paramètres a un gestionnaire d'erreurs ?",
+        "answers": [
+          {
+            "id": 628,
+            "label": "3",
+            "isCorrect": false
+          },
+          {
+            "id": 629,
+            "label": "4",
+            "isCorrect": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Les modules Node.js",
+    "description": "",
+    "published": false,
+    "createdAt": "2026-11-20T11:15:50.645Z",
+    "questions": [
+      {
+        "id": 162,
+        "statement": "Quel mot-clé importe un module ECMAScript ?",
+        "answers": [
+          {
+            "id": 630,
+            "label": "import",
+            "isCorrect": true
+          },
+          {
+            "id": 631,
+            "label": "require",
+            "isCorrect": false
+          },
+          {
+            "id": 632,
+            "label": "include",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
   }
 ]

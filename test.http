@@ -26,11 +26,79 @@ Content-Type: application/json
 
 { "answers": [ { "questionId": 99, "answerId": 1 } ] }
 
-### JSON tronqué → 400
-POST {{baseUrl}}/api/quizzes/1
-Content-Type: application/json
+# Requete sur l'API Rest mise en commentaire pour ne pas gêner la colorisaton du reste du fichier
+# ### JSON tronqué → 400
+# POST {{baseUrl}}/api/quizzes/1
+# Content-Type: application/json
 
-{ "answers": [
+# { "answers": [
 
 ### Route inconnue 404
 GET {{baseUrl}}/api/inconnue
+
+
+############################## CRÉER, MODIFIER, SUPPRIMER ##############################
+
+### Quiz invalide → 400 : details liste CHAQUE problème
+POST {{baseUrl}}/api/quizzes
+Content-Type: application/json
+
+{
+  "title": "ab",
+  "questions": [
+    {
+      "statement": "Deux bonnes réponses ?",
+      "answers": [
+        { "label": "Oui", "isCorrect": true },
+        { "label": "Aussi oui", "isCorrect": true }
+      ]
+    }
+  ]
+}
+
+### Quiz valide, sans « published » → 201, brouillon
+# @name draft
+POST {{baseUrl}}/api/quizzes
+Content-Type: application/json
+
+{
+  "title": "Express en deux questions",
+  "description": "Créé avec requests.http",
+  "questions": [
+    {
+      "statement": "Quel middleware lit un corps JSON ?",
+      "answers": [
+        { "label": "express.static()", "isCorrect": false },
+        { "label": "express.json()", "isCorrect": true }
+      ]
+    },
+    {
+      "statement": "Combien de paramètres a un gestionnaire d'erreurs ?",
+      "answers": [
+        { "label": "3", "isCorrect": false },
+        { "label": "4", "isCorrect": true }
+      ]
+    }
+  ]
+}
+
+### Un brouillon est invisible → 404
+GET {{baseUrl}}/api/quizzes/{{draft.response.body.id}}
+
+### Le publier → 200
+PATCH {{baseUrl}}/api/quizzes/{{draft.response.body.id}}
+Content-Type: application/json
+
+{ "published": true }
+
+### Il est maintenant visible → 200
+GET {{baseUrl}}/api/quizzes/{{draft.response.body.id}}
+
+### Champ non modifiable → 400
+PATCH {{baseUrl}}/api/quizzes/{{draft.response.body.id}}
+Content-Type: application/json
+
+{ "id": 1 }
+
+### Supprimer → 204 (une seconde fois → 404)
+DELETE {{baseUrl}}/api/quizzes/{{draft.response.body.id}}

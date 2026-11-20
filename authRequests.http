@@ -1,0 +1,141 @@
+### Requêtes de test d'EduTrack (extension VS Code « REST Client »)
+### Cliquez sur « Send Request » au-dessus de chaque requête.
+### Commencez par les deux connexions : les jetons sont réutilisés ensuite.
+@baseUrl = http://localhost:3000
+@trainerToken = {{loginTrainer.response.body.token}}
+@studentToken = {{loginStudent.response.body.token}}
+
+############################## AUTHENTIFICATION ##############################
+
+### Connexion du formateur
+# @name loginTrainer
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "formateur@edutrack.local", "password": "Formateur123!" }
+
+### Connexion de l'apprenante
+# @name loginStudent
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "alice@edutrack.local", "password": "Apprenant123!" }
+
+### Mauvais mot de passe → 401
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "formateur@edutrack.local", "password": "erreur" }
+
+### Mon profil
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{trainerToken}}
+
+### Sans jeton → 401
+GET {{baseUrl}}/api/auth/me
+
+############################## CONSULTER ET PASSER (public) ##############################
+
+### Liste des quiz publiés (visiteur)
+GET {{baseUrl}}/api/quizzes
+
+### Liste complète, brouillons compris (formateur)
+GET {{baseUrl}}/api/quizzes
+Authorization: Bearer {{trainerToken}}
+
+### Un quiz publié, sans les bonnes réponses
+GET {{baseUrl}}/api/quizzes/1
+
+### Un brouillon : 404 pour un visiteur…
+GET {{baseUrl}}/api/quizzes/2
+
+### … mais visible, complet, pour un formateur
+GET {{baseUrl}}/api/quizzes/2
+Authorization: Bearer {{trainerToken}}
+
+### Soumettre ses réponses : le serveur calcule le score
+POST {{baseUrl}}/api/quizzes/1/submit
+Content-Type: application/json
+
+{ "answers": [ { "questionId": 1, "answerId": 2 }, { "questionId": 2, "answerId": 6 } ] }
+
+### Réponse à une question d'un autre quiz → 400
+POST {{baseUrl}}/api/quizzes/1/submit
+Content-Type: application/json
+
+{ "answers": [ { "questionId": 99, "answerId": 1 } ] }
+
+### Identifiant invalide → 400
+GET {{baseUrl}}/api/quizzes/abc
+
+############################## GÉRER LES QUIZ (formateur) ##############################
+
+### Créer un quiz en brouillon → 201
+# @name draft
+POST {{baseUrl}}/api/quizzes
+Authorization: Bearer {{trainerToken}}
+Content-Type: application/json
+
+{
+  "title": "Les modules Node.js",
+  "questions": [
+    {
+      "statement": "Quel mot-clé importe un module ECMAScript ?",
+      "answers": [
+        { "label": "import", "isCorrect": true },
+        { "label": "require", "isCorrect": false },
+        { "label": "include", "isCorrect": false }
+      ]
+    }
+  ]
+}
+
+### Sans jeton → 401
+POST {{baseUrl}}/api/quizzes
+Content-Type: application/json
+
+{ "title": "Pirate" }
+
+### Avec un jeton d'apprenant → 403
+POST {{baseUrl}}/api/quizzes
+Authorization: Bearer {{studentToken}}
+Content-Type: application/json
+
+{ "title": "Pirate" }
+
+### Quiz invalide : la réponse détaille chaque problème → 400
+POST {{baseUrl}}/api/quizzes
+Authorization: Bearer {{trainerToken}}
+Content-Type: application/json
+
+{
+  "title": "ab",
+  "questions": [
+    { "statement": "", "answers": [ { "label": "x", "isCorrect": true }, { "label": "y", "isCorrect": true } ] }
+  ]
+}
+
+### Publier le brouillon
+PATCH {{baseUrl}}/api/quizzes/{{draft.response.body.id}}
+Authorization: Bearer {{trainerToken}}
+Content-Type: application/json
+
+{ "published": true }
+
+### Champ non modifiable → 400
+PATCH {{baseUrl}}/api/quizzes/{{draft.response.body.id}}
+Authorization: Bearer {{trainerToken}}
+Content-Type: application/json
+
+{ "id": 1 }
+
+### Supprimer (apprenant) → 403
+DELETE {{baseUrl}}/api/quizzes/{{draft.response.body.id}}
+Authorization: Bearer {{studentToken}}
+
+### Supprimer (formateur) → 204
+DELETE {{baseUrl}}/api/quizzes/{{draft.response.body.id}}
+Authorization: Bearer {{trainerToken}}
+
+### Méthode non autorisée → 405 (en-tête Allow)
+PUT {{baseUrl}}/api/quizzes/1

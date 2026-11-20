@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "email": "formateur@edutrack.local",
+    "name": "Formateur principal",
+    "role": "trainer",
+    "passwordHash": "44e6fc180580b408984dfc36d0986f42:da786890705e4000321529c128e7c1ae0708e3bb73c4903a4e84f0b18cf368be4a4a45ffc37c937941ff8f6277c02a9597cc5ee20822f45aa141922ac63cdbd2"
+  },
+  {
+    "id": 2,
+    "email": "formateur2@edutrack.local",
+    "name": "Second formateur",
+    "role": "trainer",
+    "passwordHash": "d17d219e527b37f5449e595d89d90987:3661f06a1d009532ca76ef3bd23c0e93a70bd2696e282791debc3a9e920fd01e2ecea8c07b857285a840b726ea69b30245d31effc340550fc50546888932bf4a"
+  },
+  {
+    "id": 3,
+    "email": "alice@edutrack.local",
+    "name": "Alice",
+    "role": "student",
+    "passwordHash": "fff7923d7dbc621770533174f8cfc8ad:78e847a90f9bff74991aef8e01c0009af5c9c218105681c71f22589d4d45092494e01c9f62d76783e1ffb49afef5458e1fea59fb4a471421412e498f1e9864dd"
+  }
+]

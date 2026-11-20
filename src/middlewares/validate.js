@@ -32,6 +32,6 @@ function methodNotAllowed(allowed) {
     res.set('Allow', allowed.join(', '));
     res.status(405).json({ error: `Méthode ${req.method} non autorisée` });
   };
-}
+} 
 
 module.exports = { requireJson, validate, methodNotAllowed };

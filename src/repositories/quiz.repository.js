@@ -72,4 +72,13 @@ async function create(data) {
   return quiz;
 }
 
-module.exports = { findAll, findById, save, create, maxId };
+// Supprime un quiz. Renvoie true s'il existait, false sinon.
+async function remove(id) {
+  const quizzes = await readAll();
+  const remaining = quizzes.filter((q) => q.id !== id);
+  if (remaining.length === quizzes.length) return false;
+  await writeAll(remaining);
+  return true;
+}
+
+module.exports = { findAll, findById, save, create, maxId, remove };

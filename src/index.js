@@ -2,11 +2,17 @@
 
 'use strict';
 
+const config = require("./config")
 const app = require("./app");
 
-const port = 3000;
+const port = config.port;
+
+if(!config.jwtSecret){
+    console.error('JWT_SECRET manquant : copiez .env.example en .env et renseignez le.');
+    process.exit(1);
+}
 
 // app.listen
-app.listen(port, () => {
+app.listen(config.port, () => {
     console.log(`Edutrack écoute sur http://localhost:${port}`);
 }); 

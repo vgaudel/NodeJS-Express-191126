@@ -25,4 +25,11 @@ class NotFoundError extends AppError {
   }
 }
 
-module.exports = { AppError, ValidationError, NotFoundError };
+class UnauthorizedError extends AppError { // 401 : qui êtes-vous ?
+  constructor(message = 'Authentification requise') { super(message, 401); }
+}
+class ForbiddenError extends AppError { // 403 : vous n'avez pas le droit
+  constructor(message = 'Accès interdit') { super(message, 403); }
+}
+
+module.exports = { AppError, ValidationError, NotFoundError, UnauthorizedError, ForbiddenError};
