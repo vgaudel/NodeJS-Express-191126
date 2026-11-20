@@ -1,29 +1,32 @@
-// Réinitialise les données de démonstration (E02 ; comptes utilisateurs en E04).
+// Réinitialise la base de démonstration (E02 ; comptes en E04 ; base de données en E06-E07).
 // Lancement :  npm run seed                     → réinitialise TOUT
-//              node scripts/seed.js --if-missing → crée seulement les fichiers absents
+//              node scripts/seed.js --if-missing → seulement si la base n'existe pas
 //                (lancé automatiquement avant « npm start » et « npm run dev » :
 //                 scripts « prestart » et « predev » de package.json)
 //
-// - data/seed-quizzes.json (versionné) → data/quizzes.json (fichier de travail)
-// - comptes de démonstration → data/users.json, mots de passe HACHÉS
+// 1. supprime et recrée toutes les tables ;
+// 2. crée les comptes de démonstration (mots de passe hachés) ;
+// 3. importe les quiz de data/seed-quizzes.json, dans UNE transaction.
 'use strict';
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const config = require('../src/config');
+const { AppDataSource } = require('../src/config/database');
+const userRepository = require('../src/repositories/user.repository');
+const quizRepository = require('../src/repositories/quiz.repository');
 const { hashPassword } = require('../src/services/password.service');
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
-const QUIZZES_FILE = path.join(DATA_DIR, 'quizzes.json');
+const SEED_FILE = path.join(__dirname, '..', 'data', 'seed-quizzes.json');
 const IF_MISSING = process.argv.includes('--if-missing');
 
-// Faut-il (re)créer ce fichier ? Toujours, sauf avec --if-missing s'il existe déjà.
-async function mustCreate(file) {
-  if (!IF_MISSING) return true;
+// La base existe-t-elle déjà ?
+async function exists(file) {
   try {
     await fs.access(file); // lève une erreur si le fichier n'existe pas
-    return false;
-  } catch {
     return true;
+  } catch {
+    return false;
   }
 }
 
@@ -35,28 +38,48 @@ const DEMO_USERS = [
 ];
 
 async function main() {
-  // 1. Les quiz
-  if (await mustCreate(QUIZZES_FILE)) {
-    await fs.copyFile(path.join(DATA_DIR, 'seed-quizzes.json'), QUIZZES_FILE);
-    console.log('✅ data/quizzes.json réinitialisé');
+  if (IF_MISSING && (await exists(config.dbPath))) return;
+
+  await AppDataSource.initialize();
+  // synchronize(true) : SUPPRIME toutes les tables puis les recrée, vides.
+  await AppDataSource.synchronize(true);
+
+  // 1. Les utilisateurs
+  for (const { password, ...user } of DEMO_USERS) {
+    await userRepository.create({ ...user, passwordHash: await hashPassword(password) });
   }
+  console.log(`✅ ${DEMO_USERS.length} comptes créés`);
 
-  const usersFile = path.join(DATA_DIR, 'users.json');
-  if (!(await mustCreate(usersFile))) return;
+  // 2. Les quiz. Le fichier contient des identifiants : on les retire, c'est
+  //    la base qui les attribue (dans le même ordre, donc les mêmes valeurs).
+  const data = JSON.parse(await fs.readFile(SEED_FILE, 'utf8'));
 
-  // 2. Les utilisateurs : on hache les mots de passe EN PARALLÈLE (Promise.all, vu en A06)
-  const users = await Promise.all(
-    DEMO_USERS.map(async ({ password, ...user }, index) => ({
-      id: index + 1,
-      ...user,
-      passwordHash: await hashPassword(password),
-    })),
-  );
-  await fs.writeFile(usersFile, JSON.stringify(users, null, 2) + '\n');
-  console.log(`✅ ${users.length} comptes créés dans data/users.json`);
+  // AppDataSource.transaction : toutes les écritures faites avec « manager »
+  // sont validées ensemble à la fin… ou annulées ensemble en cas d'erreur.
+  await AppDataSource.transaction(async (manager) => {
+    for (const quiz of data) {
+      await quizRepository.create(
+        {
+          title: quiz.title,
+          description: quiz.description,
+          published: quiz.published,
+          createdAt: new Date(quiz.createdAt),
+          questions: quiz.questions.map((q) => ({
+            statement: q.statement,
+            answers: q.answers.map((a) => ({ label: a.label, isCorrect: a.isCorrect })),
+          })),
+        },
+        manager, // ← toutes les écritures passent par la transaction
+      );
+    }
+  });
+  console.log(`✅ ${data.length} quiz importés dans ${config.dbPath}`);
 }
 
-main().catch((error) => {
-  console.error('❌ Seed impossible :', error.message);
-  process.exitCode = 1;
-});
+main()
+  .catch((error) => {
+    console.error('❌ Seed impossible :', error.message);
+    process.exitCode = 1;
+  })
+  // finally : on ferme la connexion dans tous les cas, sinon le script ne s'arrête pas
+  .finally(() => AppDataSource.isInitialized && AppDataSource.destroy());

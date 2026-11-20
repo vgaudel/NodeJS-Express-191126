@@ -1,18 +1,30 @@
-// Point d'entrée : mets l'application à l'écoute
-
+// Point d'entrée : met l'application à l'écoute (E01 ; configuration en E03 ;
+// contrôle du secret JWT en E04 ; connexion à la base en E06).
+// Lancement :  npm start      ou      npm run dev  (redémarrage automatique)
 'use strict';
 
-const config = require("./config")
-const app = require("./app");
+const config = require('./config');
+const app = require('./app');
+const { AppDataSource } = require('./config/database');
 
-const port = config.port;
+async function main() {
+  // E04 : sans secret JWT, l'authentification est impossible : on refuse de
+  // démarrer plutôt que de fonctionner dans un état non sécurisé.
+  if (!config.jwtSecret) {
+    throw new Error('JWT_SECRET manquant : copiez .env.example en .env et renseignez-le.');
+  }
 
-if(!config.jwtSecret){
-    console.error('JWT_SECRET manquant : copiez .env.example en .env et renseignez le.');
-    process.exit(1);
+  // E06 : on se connecte à la base AVANT d'accepter des requêtes.
+  await AppDataSource.initialize();
+  console.log(`Base de données : ${config.dbPath}`);
+
+  // app.listen crée le serveur (http.createServer(app)) et le met à l'écoute.
+  app.listen(config.port, () => {
+    console.log(`EduTrack écoute sur http://localhost:${config.port} (${config.env})`);
+  });
 }
 
-// app.listen
-app.listen(config.port, () => {
-    console.log(`Edutrack écoute sur http://localhost:${port}`);
-}); 
+main().catch((error) => {
+  console.error('❌ Démarrage impossible :', error.message);
+  process.exit(1);
+});

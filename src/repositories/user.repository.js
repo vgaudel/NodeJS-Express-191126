@@ -1,23 +1,26 @@
-// Accès aux utilisateurs stockés dans data/users.json (E04).
-// Même principe que le repository des quiz de A06 (fs/promises).
-// Fichier créé par « npm run seed », avec des mots de passe HACHÉS.
-const fs = require('node:fs/promises');
-const path = require('node:path');
+// Accès aux utilisateurs — version TypeORM (E06).
+//
+// Comparez avec la version JSON de E04 : même interface (findByEmail,
+// findById), donc le service d'authentification ne change PAS.
+// C'est tout l'intérêt du patron Repository.
+const { AppDataSource } = require('../config/database');
 
-const FILE = path.join(__dirname, '..', '..', 'data', 'users.json');
-
-async function findAll() {
-  return JSON.parse(await fs.readFile(FILE, 'utf8'));
-}
+// getRepository('User') donne un objet qui sait lire et écrire la table users.
+// C'est une FONCTION : le repository n'existe qu'après AppDataSource.initialize().
+const users = () => AppDataSource.getRepository('User');
 
 async function findByEmail(email) {
-  const users = await findAll();
-  return users.find((u) => u.email === email.toLowerCase()) ?? null;
+  // findOneBy({ email }) génère : SELECT ... FROM users WHERE email = ? LIMIT 1
+  // TypeORM utilise TOUJOURS des paramètres : pas d'injection SQL possible.
+  return users().findOneBy({ email: email.toLowerCase() });
 }
 
 async function findById(id) {
-  const users = await findAll();
-  return users.find((u) => u.id === id) ?? null;
+  return users().findOneBy({ id });
 }
 
-module.exports = { findByEmail, findById };
+async function create(data) {
+  return users().save(data); // INSERT, puis renvoie l'objet avec son id
+}
+
+module.exports = { findByEmail, findById, create };
